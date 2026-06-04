@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Initiatives</title>
+<meta name="description" content="Explore the digital archive, Hunar Project, and oral history initiatives shaping Re-Root's cultural preservation work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="team.html">Meet the Team</a></li>
+    <li><a href="communities.html">Communities</a></li>
+    <li><a href="initiatives.html" class="active" aria-current="page">Initiatives</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="mission.html" class="mobile-link">Our Mission</a>
+  <a href="team.html" class="mobile-link">Meet the Team</a>
+  <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="initiatives.html" class="mobile-link active" aria-current="page">Initiatives</a>
+  <a href="press.html" class="mobile-link">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page">
+  <div class="projects-header store-header pattern-header-bg">
+    <p class="section-label">Our Work</p>
+    <h1 class="section-title">The Project<br><em>Blueprint</em></h1>
+    <p class="section-para" style="margin-top:16px">Three interconnected initiatives that form a complete ecosystem &mdash; from memory to market.</p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card" onclick="toggleProject('digital')">
+      <div class="project-num">01</div>
+      <p class="project-tag">Archive &amp; Memory</p>
+      <h3 class="project-title">Digital Archive</h3>
+      <p class="project-desc">Moving fragile tribal memories into a permanent, accessible online archive &mdash; ensuring no story is lost to time or geography.</p>
+      <p style="margin-top:20px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--indigo)">Read More &#8595;</p>
+    </div>
+    <div class="project-card" onclick="toggleProject('hunar')">
+      <div class="project-num">02</div>
+      <p class="project-tag">Craft Revival</p>
+      <h3 class="project-title">Hunar Project</h3>
+      <p class="project-desc">A craft-revival program where museum-grade motifs are applied to modern apparel &mdash; training young women in embroidery, dressmaking, and indigenous design.</p>
+      <p style="margin-top:20px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--indigo)">Read More &#8595;</p>
+    </div>
+    <div class="project-card" onclick="toggleProject('lokgeet')">
+      <div class="project-num">03</div>
+      <p class="project-tag">Oral History</p>
+      <h3 class="project-title">Lok Geet Documentation</h3>
+      <p class="project-desc">Recording the migration songs and oral histories of the Himalayan highlands before they fade &mdash; preserving language, memory, and cultural knowledge.</p>
+      <p style="margin-top:20px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--indigo)">Read More &#8595;</p>
+    </div>
+  </div>
+
+  <div id="expand-digital" class="project-expand">
+    <div style="max-width:800px">
+      <p class="section-label">Online Museum Archive</p>
+      <h2 class="section-title" style="font-style:italic">Digital Preservation Initiative</h2>
+      <p class="section-para">One of the key initiatives of Re-Root is the collaboration with Kashmir Tribal Art Society (KTAS) in curating the digital preparation of the museum collection. We are working to create an online museum archive where artefacts, photographs, and cultural narratives are documented and made accessible through digital platforms.</p>
+      <p class="section-para">This initiative helps preserve fragile materials, expand access for researchers and students, and allow people from different parts of the world to learn about Gujjar Bakarwal heritage &mdash; removing geography as a barrier to cultural understanding.</p>
+    </div>
+  </div>
+
+  <div id="expand-hunar" class="project-expand">
+    <div style="max-width:800px">
+      <p class="section-label">Craft Revival Program</p>
+      <h2 class="section-title" style="font-style:italic">The Hunar Project</h2>
+      <p class="section-para">The Hunar Project focuses on reviving traditional tribal crafts by training young women in embroidery, dressmaking, jewellery making, and indigenous design. The program preserves cultural knowledge while creating sustainable livelihood opportunities and strengthening pride in Gujjar-Bakarwal heritage.</p>
+      <p class="section-para">By working directly with community artisans, we ensure that museum-grade motifs &mdash; those carrying centuries of cultural meaning &mdash; are faithfully applied to contemporary garments, bridging the ancestral and the modern.</p>
+    </div>
+  </div>
+
+  <div id="expand-lokgeet" class="project-expand">
+    <div style="max-width:800px">
+      <p class="section-label">Oral History Documentation</p>
+      <h2 class="section-title" style="font-style:italic">The Lok Geet Project</h2>
+      <p class="section-para">The Lok Geet Project documents traditional folk songs and oral narratives of Gujjar and Bakarwal communities. The project records elders singing lok geet &mdash; preserving language, migration memories, and cultural knowledge encoded in melody and verse.</p>
+      <p class="section-para">These recordings are being safeguarded in our digital archive, ensuring these living traditions are available for future generations and researchers who would otherwise have no access to this disappearing knowledge.</p>
+    </div>
+  </div>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px;margin-top:80px">
+    <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</main>
+</body>
+</html>

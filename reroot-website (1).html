@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT — Rooted in Heritage, Woven for the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #2E4A32;
+  --olive: #6B7A3E;
+  --gold: #E2B23C;
+  --clay: #B35A2E;
+  --dye: #3A342E;
+  --ivory: #F3EF66;
+  --ivorylight: #F5F0E8;
+  --beige: #DCC9A6;
+  --indigo: #2F5F63;
+  --stone: #8E877C;
+  --mahua: #8A4F5E;
+  --bg: #FAF7F2;
+  --text: #1a1714;
+  --muted: #6b6560;
+  --border: rgba(46,74,50,0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+}
+/* TYPOGRAPHY */
+h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.2; }
+.serif { font-family: 'Cormorant Garamond', serif; }
+.caps { letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; font-weight: 500; }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600; letter-spacing: 0.05em;
+  color: var(--forest); text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 0; list-style: none; }
+.nav-links a {
+  display: block; padding: 0 18px; height: 64px; line-height: 64px;
+  color: var(--dye); text-decoration: none;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+.nav-links a::after {
+  content:''; position: absolute; bottom: 0; left: 18px; right: 18px; height: 2px;
+  background: var(--gold); transform: scaleX(0); transition: transform 0.2s;
+}
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-store {
+  background: var(--forest); color: #fff !important;
+  padding: 8px 20px !important; height: auto !important; line-height: normal !important;
+  border-radius: 2px; margin-left: 10px;
+}
+.nav-store:hover { background: var(--olive) !important; color: #fff !important; }
+.nav-store::after { display: none !important; }
+/* PAGES */
+.page { display: none; min-height: 100vh; padding-top: 64px; }
+.page.active { display: block; }
+/* HAMBURGER */
+.hamburger {
+  display: none; flex-direction: column; justify-content: center;
+  gap: 5px; background: none; border: none; cursor: pointer;
+  padding: 8px; z-index: 200;
+}
+.hamburger span {
+  display: block; width: 24px; height: 1.5px; background: var(--dye);
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+/* MOBILE DRAWER */
+.mobile-drawer {
+  display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+  background: var(--bg); z-index: 99; padding: 40px 6vw;
+  flex-direction: column; gap: 0;
+  transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.mobile-drawer.open { transform: translateX(0); }
+.mobile-link {
+  display: block; padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 28px; font-family: 'Cormorant Garamond', serif;
+  font-style: italic; color: var(--dye); text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-link:hover { color: var(--gold); }
+.mobile-link-store {
+  margin-top: 32px; background: var(--forest); color: #fff !important;
+  padding: 16px 24px; font-style: normal; font-family: 'Jost', sans-serif;
+  font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+  border-bottom: none; text-align: center;
+}
+.drawer-overlay {
+  display: none; position: fixed; inset: 0; z-index: 98;
+  background: rgba(26,23,20,0.4);
+}
+.drawer-overlay.show { display: block; }
+/* HERO FULLBLEED */
+.hero-fullbleed {
+  position: relative; min-height: calc(100vh - 64px);
+  background-color: var(--dye);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 70% 50%, #6B3A1F 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 20% 80%, #2E4A32 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 85% 15%, #B35A2E 0%, transparent 50%);
+  background-color: #2a2219;
+}
+.hero-bg-pattern::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 60 Q30 20 60 60 Q90 100 120 60' fill='none' stroke='rgba(226,178,60,0.06)' stroke-width='1'/%3E%3Cpath d='M0 30 Q30 0 60 30 Q90 60 120 30' fill='none' stroke='rgba(226,178,60,0.04)' stroke-width='1'/%3E%3Cpath d='M0 90 Q30 60 60 90 Q90 120 120 90' fill='none' stroke='rgba(226,178,60,0.04)' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='30' fill='none' stroke='rgba(245,240,232,0.025)' stroke-width='1'/%3E%3Cpath d='M30 0 L30 120 M60 0 L60 120 M90 0 L90 120' stroke='rgba(245,240,232,0.015)' stroke-width='0.5'/%3E%3Cpath d='M0 30 L120 30 M0 60 L120 60 M0 90 L120 90' stroke='rgba(245,240,232,0.015)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+.hero-bg-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(105deg, rgba(26,18,12,0.75) 0%, rgba(26,18,12,0.3) 55%, rgba(26,18,12,0.0) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 80px 6vw 80px;
+  gap: 60px;
+}
+.hero-content-inner { max-width: 560px; }
+.hero-tagline {
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 24px; font-weight: 500;
+}
+.hero-h1 {
+  font-size: clamp(44px, 5.5vw, 80px); color: var(--ivorylight);
+  font-weight: 300; font-style: italic; line-height: 1.05;
+  margin-bottom: 32px;
+}
+.hero-h1 strong { font-style: normal; font-weight: 600; color: var(--gold); }
+.hero-sub {
+  color: rgba(245,240,232,0.65); font-size: 15px; line-height: 1.85;
+  max-width: 420px; margin-bottom: 48px;
+}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--gold); color: var(--dye);
+  padding: 14px 32px; text-decoration: none;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+  border-radius: 2px; transition: background 0.2s;
+}
+.btn-primary:hover { background: #c9a030; }
+.btn-ghost {
+  border: 1px solid rgba(245,240,232,0.3); color: var(--ivorylight);
+  padding: 14px 32px; text-decoration: none;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+  border-radius: 2px; transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.hero-overlay-card {
+  background: rgba(245,240,232,0.95); padding: 40px 48px;
+  text-align: center; min-width: 260px; flex-shrink: 0;
+}
+.hero-overlay-card .label {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--stone);
+  margin-bottom: 10px;
+}
+.hero-overlay-card h3 {
+  font-size: 20px; color: var(--dye); font-weight: 400; letter-spacing: 0.05em;
+  font-style: italic;
+}
+.hero-scroll-hint {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; gap: 16px;
+  padding: 0 6vw 32px;
+  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+}
+.hero-scroll-line {
+  width: 48px; height: 1px; background: rgba(245,240,232,0.25);
+}
+/* PLACEHOLDER (non-hero) */
+.placeholder-label {
+  color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+}
+/* LIGHT PILLARS */
+.section { padding: 80px 6vw; }
+.section-sm { padding: 60px 6vw; }
+.section-label {
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px; font-weight: 500;
+}
+.section-title { font-size: clamp(32px, 4vw, 52px); color: var(--forest); margin-bottom: 24px; }
+.section-para { color: var(--muted); max-width: 680px; line-height: 1.9; margin-bottom: 20px; }
+.pillars-section { background: var(--ivorylight); }
+.pillars-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  margin-top: 60px;
+}
+.pillar {
+  background: var(--bg); padding: 48px 28px;
+  text-align: center;
+}
+.pillar-letter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px; font-weight: 300; color: var(--gold);
+  line-height: 1; margin-bottom: 16px;
+}
+.pillar-name {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--forest); font-weight: 500; margin-bottom: 12px;
+}
+.pillar-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+/* MISSION */
+.mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.mission-img {
+  aspect-ratio: 4/5; background: var(--beige);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+}
+.pullquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3vw, 38px); font-style: italic;
+  color: var(--forest); line-height: 1.4; margin-bottom: 32px;
+  border-left: 3px solid var(--gold); padding-left: 28px;
+}
+/* TEAM */
+.team-section { background: var(--dye); }
+.team-section .section-title { color: var(--ivorylight); }
+.team-section .section-label { color: var(--gold); }
+.team-section .section-para { color: rgba(245,240,232,0.6); }
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+.team-card {
+  border: 1px solid rgba(245,240,232,0.1); padding: 40px;
+}
+/* FOUNDER PHOTO */
+.founder-photo-frame {
+  width: 120px; height: 120px; border-radius: 50%;
+  overflow: hidden; margin-bottom: 28px;
+  border: 3px solid rgba(226,178,60,0.4);
+}
+.founder-photo-frame img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.team-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; color: var(--ivorylight); margin-bottom: 4px;
+}
+.team-role {
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.team-bio { color: rgba(245,240,232,0.6); font-size: 14px; line-height: 1.8; }
+/* KASHMIR PAGE */
+.ktas-hero {
+  height: 60vh; background: var(--forest);
+  display: flex; align-items: flex-end; padding: 60px 6vw;
+  position: relative; overflow: hidden;
+}
+.ktas-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle cx="40" cy="40" r="30" fill="none" stroke="rgba(226,178,60,0.08)" stroke-width="1"/><circle cx="40" cy="40" r="20" fill="none" stroke="rgba(226,178,60,0.05)" stroke-width="1"/></svg>') repeat;
+}
+.ktas-hero-content { position: relative; max-width: 700px; }
+.ktas-hero-content .section-label { color: var(--gold); }
+.ktas-hero h1 {
+  font-size: clamp(36px, 5vw, 64px); color: var(--ivorylight);
+  font-weight: 300; font-style: italic; margin-bottom: 16px;
+}
+.ktas-hero p { color: rgba(245,240,232,0.65); font-size: 16px; max-width: 560px; }
+.ktas-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.ktas-img-col {
+  background: var(--beige); min-height: 500px;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.ktas-text-col { padding: 80px 6vw; }
+.achievement-list { list-style: none; margin-top: 32px; }
+.achievement-list li {
+  padding: 20px 0; border-bottom: 1px solid var(--border);
+  display: flex; gap: 20px; align-items: flex-start;
+}
+.achievement-list li:last-child { border-bottom: none; }
+.ach-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; color: var(--gold); font-weight: 300;
+  line-height: 1; min-width: 48px;
+}
+.ach-text h4 { font-size: 16px; color: var(--forest); margin-bottom: 4px; font-weight: 500; }
+.ach-text p { font-size: 13px; color: var(--muted); }
+.community-band { background: var(--clay); padding: 80px 6vw; }
+.community-band .section-title { color: var(--ivorylight); font-style: italic; }
+.community-band .section-label { color: rgba(245,240,232,0.6); }
+.community-band .section-para { color: rgba(245,240,232,0.75); max-width: none; }
+/* PROJECTS PAGE */
+.projects-header { padding: 80px 6vw 40px; background: var(--ivorylight); }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.project-card {
+  padding: 60px 40px; border: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.project-card:hover { background: var(--ivorylight); }
+.project-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px; font-weight: 300; color: var(--beige);
+  line-height: 1; margin-bottom: 24px;
+}
+.project-tag {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px; font-weight: 500;
+}
+.project-title { font-size: 28px; color: var(--forest); margin-bottom: 16px; font-style: italic; }
+.project-desc { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.project-expand { 
+  margin-top: 24px; padding: 60px 6vw; 
+  background: var(--bg); border-top: 1px solid var(--border);
+  display: none;
+}
+.project-expand.open { display: block; }
+/* STORE PAGE */
+.store-header { padding: 80px 6vw 40px; }
+.store-filters {
+  display: flex; gap: 0; margin-bottom: 60px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-btn {
+  padding: 12px 28px; background: none; border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent;
+  margin-bottom: -1px; transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active { color: var(--forest); border-bottom-color: var(--gold); }
+.store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+.store-item { background: var(--bg); }
+.store-img {
+  aspect-ratio: 4/5; background: var(--beige);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px; position: relative; overflow: hidden;
+}
+.store-img-inner { background: linear-gradient(135deg, var(--beige), var(--stone) 80%); }
+.craft-badge {
+  position: absolute; bottom: 16px; left: 16px;
+  background: var(--ivorylight); padding: 6px 14px;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dye);
+}
+.store-info { padding: 24px; }
+.store-item-name { font-size: 20px; color: var(--forest); margin-bottom: 4px; }
+.store-item-origin {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--stone); margin-bottom: 12px;
+}
+.store-item-price { font-size: 16px; color: var(--clay); font-weight: 500; }
+.meet-artisan {
+  display: flex; align-items: center; gap: 10px; margin-top: 16px;
+  padding-top: 16px; border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--indigo); cursor: pointer;
+  text-decoration: none;
+}
+/* PRESS */
+.press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+.press-card {
+  padding: 40px; border: 1px solid var(--border);
+}
+.press-source {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--stone); margin-bottom: 16px;
+}
+.press-headline { font-size: 22px; color: var(--forest); font-style: italic; line-height: 1.4; margin-bottom: 16px; }
+.press-link {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--indigo); text-decoration: none;
+}
+/* FOOTER */
+footer {
+  background: var(--dye); color: rgba(245,240,232,0.6);
+  padding: 60px 6vw 40px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+.footer-brand h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; color: var(--ivorylight); margin-bottom: 16px;
+}
+.footer-brand span { color: var(--gold); }
+.footer-brand p { font-size: 14px; line-height: 1.8; }
+.footer-col h4 {
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px; font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(245,240,232,0.1); padding-top: 32px; font-size: 13px; text-align: center; }
+/* DIVIDER */
+.divider {
+  display: flex; align-items: center; gap: 20px;
+  padding: 0 6vw; margin: 0;
+}
+.divider-line { flex: 1; height: 1px; background: var(--border); }
+.divider-motif {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: var(--gold);
+}
+/* STAT BAND */
+.stat-band {
+  background: var(--forest); padding: 60px 6vw;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; text-align: center;
+}
+.stat-item { padding: 0 20px; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px; color: var(--gold); font-weight: 300;
+  line-height: 1; margin-bottom: 8px;
+}
+.stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+/* SCROLL FADE IN */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeUp 0.7s ease forwards; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-content { flex-direction: column; padding: 60px 6vw 40px; gap: 40px; align-items: flex-start; }
+  .hero-overlay-card { width: 100%; padding: 28px 32px; }
+  .mission-grid, .team-grid, .ktas-split, .footer-grid { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .store-grid { grid-template-columns: 1fr 1fr; }
+  .stat-band { grid-template-columns: 1fr 1fr; gap: 0; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-drawer { display: flex; }
+}
+@media (max-width: 600px) {
+  .store-grid { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .press-grid { grid-template-columns: 1fr; }
+  .stat-band { grid-template-columns: 1fr 1fr; }
+  .hero-h1 { font-size: 42px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home')">RE<span>-</span>ROOT</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showPage('mission')" id="nav-mission">Our Mission</a></li>
+    <li><a href="#" onclick="showPage('team')" id="nav-team">Meet the Team</a></li>
+    <li><a href="#" onclick="showPage('kashmir')" id="nav-kashmir">Communities</a></li>
+    <li><a href="#" onclick="showPage('projects')" id="nav-projects">Initiatives</a></li>
+    <li><a href="#" onclick="showPage('press')" id="nav-press">Press</a></li>
+    <li><a href="#" onclick="showPage('store')" id="nav-store" class="nav-store">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="#" onclick="showPage('home');closeMenu()" class="mobile-link">Home</a>
+  <a href="#" onclick="showPage('mission');closeMenu()" class="mobile-link">Our Mission</a>
+  <a href="#" onclick="showPage('team');closeMenu()" class="mobile-link">Meet the Team</a>
+  <a href="#" onclick="showPage('kashmir');closeMenu()" class="mobile-link">Communities</a>
+  <a href="#" onclick="showPage('projects');closeMenu()" class="mobile-link">Initiatives</a>
+  <a href="#" onclick="showPage('press');closeMenu()" class="mobile-link">Press</a>
+  <a href="#" onclick="showPage('store');closeMenu()" class="mobile-link mobile-link-store">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<!-- ========== HOME PAGE ========== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero-fullbleed">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-content-inner">
+        <p class="hero-tagline">Ancestral Soul. Modern Silhouette.</p>
+        <h1 class="hero-h1">We Re-Root<br>the Craft.<br><strong>You Wear<br>the Story.</strong></h1>
+        <p class="hero-sub">Project Re-Root is a catalyst for regional heritage. We find the world's most profound, at-risk tribal arts and translate them into contemporary fashion and lifestyle.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn-primary" onclick="showPage('kashmir')">The Kashmir Chapter</a>
+          <a href="#" class="btn-ghost" onclick="showPage('mission')">Our Vision</a>
+        </div>
+      </div>
+      <div class="hero-overlay-card">
+        <p class="label">Current Chapter</p>
+        <h3>The Kashmir Tribal<br>Art Society</h3>
+        <p style="font-size:13px;color:var(--stone);margin-top:8px;letter-spacing:0.1em">Gurjar Bakarwal</p>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- LIGHT PILLARS -->
+  <section class="section pillars-section">
+    <div style="max-width:600px">
+      <p class="section-label">The LIGHT Framework</p>
+      <h2 class="section-title">Five Pillars of Cultural Revival</h2>
+      <p class="section-para">We don't just save cultures — we make them market-ready. Our five-pillar model creates sustainable ecosystems around living traditions.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-letter">L</div>
+        <div class="pillar-name">Literacy</div>
+        <p class="pillar-desc">Documenting oral history before it fades from living memory</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">I</div>
+        <div class="pillar-name">Income</div>
+        <p class="pillar-desc">Fair trade models ensuring artisans receive full value for their craft</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">G</div>
+        <div class="pillar-name">Growth</div>
+        <p class="pillar-desc">Scalable frameworks for tribal and cultural revival</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">H</div>
+        <div class="pillar-name">Hope</div>
+        <p class="pillar-desc">Turning cultural erasure into community pride and identity</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">T</div>
+        <div class="pillar-name">Training</div>
+        <p class="pillar-desc">Deliberate skill-sharing to empower the next generation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAND -->
+  <div class="stat-band">
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Tribal Women Empowered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Training Centres</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">First Community Museum</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Stories Documented</div>
+    </div>
+  </div>
+
+  <!-- INTRO BAND -->
+  <section class="section">
+    <div style="max-width:800px; margin: 0 auto; text-align:center">
+      <p class="section-label">Tradition isn't a relic</p>
+      <blockquote class="pullquote" style="border-left:none;padding-left:0;text-align:center">
+        "It's a living blueprint.<br>We're just changing the medium."
+      </blockquote>
+      <p class="section-para" style="margin: 0 auto 40px; text-align:center">Many cultural practices, skills, and stories exist not in written form, but in the everyday lives of communities — through what people make, wear, and use.</p>
+      <a href="#" class="btn-primary" onclick="showPage('store')">Explore the Collection →</a>
+    </div>
+  </section>
+
+  <!-- FEATURED CHAPTER -->
+  <div class="divider"><div class="divider-line"></div><div class="divider-motif">✦</div><div class="divider-line"></div></div>
+  <section style="display:grid;grid-template-columns:1fr 1fr;min-height:500px">
+    <div style="background:var(--beige);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:40px">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="50" stroke="var(--stone)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <path d="M30 80 Q45 30 60 60 Q75 90 90 40" stroke="var(--clay)" stroke-width="1.5" fill="none"/>
+        <circle cx="60" cy="60" r="6" fill="var(--gold)" opacity="0.6"/>
+      </svg>
+      <span class="placeholder-label" style="color:var(--stone)">Feature Image</span>
+    </div>
+    <div style="padding:80px 6vw;background:var(--ivorylight)">
+      <p class="section-label">Featured Partnership</p>
+      <h2 class="section-title" style="font-style:italic">The Kashmir<br>Tribal Arts Society</h2>
+      <p class="section-para">Our pilot partnership with Shahida Khanam — reviving the heritage of the Gujjar Bakarwal community in Bandipora through embroidery, oral history, and a first-of-its-kind community museum.</p>
+      <a href="#" onclick="showPage('kashmir')" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px">Explore the Chapter →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>RE<span>-</span>ROOT</h3>
+        <p>Rooted in Heritage, Woven for the Future. We find the world's most profound tribal arts and translate them into contemporary form.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('mission')">Our Mission</a></li>
+          <li><a href="#" onclick="showPage('team')">The Founders</a></li>
+          <li><a href="#" onclick="showPage('kashmir')">Communities</a></li>
+          <li><a href="#" onclick="showPage('projects')">Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Initiatives</h4>
+        <ul>
+          <li><a href="#">Digital Archive</a></li>
+          <li><a href="#">Hunar Project</a></li>
+          <li><a href="#">Lok Geet</a></li>
+          <li><a href="#">KTAS Museum</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ========== MISSION PAGE ========== -->
+<div id="page-mission" class="page">
+  <section class="section" style="background:var(--ivorylight);padding-bottom:0">
+    <p class="section-label">About Project Re-Root</p>
+    <h1 class="section-title">Reviving Tradition,<br><em>Reimagining Craft.</em></h1>
+  </section>
+
+  <section class="section mission-grid">
+    <div>
+      <div class="mission-img">
+        <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+          <path d="M10 90 Q20 40 40 60 Q60 80 70 20" stroke="var(--olive)" stroke-width="1.5" fill="none"/>
+          <path d="M40 60 Q30 70 20 80" stroke="var(--gold)" stroke-width="1" fill="none"/>
+        </svg>
+        <span style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Image Placeholder</span>
+      </div>
+    </div>
+    <div>
+      <blockquote class="pullquote">
+        "Many cultural practices exist not in written form, but in what people make, wear, and use."
+      </blockquote>
+      <p class="section-para">Project Re-Root creates platforms that bring visibility to these traditions while supporting artisans through skill development and global outreach.</p>
+      <p class="section-para">By recording the memories of elders, reviving traditional embroidery and dress, and supporting women artisans with training and livelihood opportunities, the organization works to ensure that tribal knowledge continues to thrive.</p>
+      <p class="section-para">Our vision is to build a living cultural archive where traditions are not only preserved but actively practiced and shared with future generations.</p>
+    </div>
+  </section>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-motif">✦</div><div class="divider-line"></div></div>
+
+  <section class="section pillars-section">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">The LIGHT Model</h2>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-letter">L</div>
+        <div class="pillar-name">Literacy</div>
+        <p class="pillar-desc">Documenting oral history, migration songs, and community narratives in accessible digital formats</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">I</div>
+        <div class="pillar-name">Income</div>
+        <p class="pillar-desc">Establishing fair-trade pipelines that channel global market access back to regional artisans</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">G</div>
+        <div class="pillar-name">Growth</div>
+        <p class="pillar-desc">Developing replicable, scalable frameworks adaptable to diverse tribal communities</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">H</div>
+        <div class="pillar-name">Hope</div>
+        <p class="pillar-desc">Reframing cultural erasure as opportunity — restoring pride and global visibility</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">T</div>
+        <div class="pillar-name">Training</div>
+        <p class="pillar-desc">Running deliberate skill-sharing programs ensuring the next generation carries forward the craft</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--dye);color:var(--ivorylight)">
+    <p class="section-label" style="color:var(--gold)">Our Vision</p>
+    <h2 class="section-title" style="color:var(--ivorylight);font-style:italic;max-width:700px">
+      "A living cultural archive where traditions are not only preserved but actively practiced."
+    </h2>
+    <p style="color:rgba(245,240,232,0.65);max-width:600px;margin-top:24px;line-height:1.9">
+      Through our museum, craft initiatives, and storytelling projects, we seek to celebrate identity, strengthen community pride, and sustain cultural heritage — connecting heritage with contemporary spaces so that living traditions are practiced, valued, and sustained.
+    </p>
+  </section>
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px;border-top:1px solid rgba(245,240,232,0.1)">
+    <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</div>
+
+<!-- ========== TEAM PAGE ========== -->
+<div id="page-team" class="page">
+  <section class="section team-section" style="padding-bottom:0">
+    <p class="section-label">The Founders</p>
+    <h1 class="section-title">The Minds Behind<br><em>Re-Root</em></h1>
+    <p class="section-para" style="margin-top:16px">Founded by high schoolers with a vision for social entrepreneurship — built to serve as a bridge between tribal legacy and the 21st-century marketplace.</p>
+    <div class="team-grid" style="margin-top:60px">
+      <div class="team-card">
+        <div class="founder-photo-frame">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face" alt="Naisha Palawat">
+        </div>
+        <h3 class="team-name">Naisha Palawat</h3>
+        <p class="team-role">Co-Founder</p>
+        <p class="team-bio">Co-founder of Project Re-Root, Naisha brings a designer's eye and a researcher's rigour to cultural preservation work. She identified the need to make tribal art not just visible, but commercially viable — giving communities economic agency alongside cultural pride.</p>
+      </div>
+      <div class="team-card">
+        <div class="founder-photo-frame">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face" alt="Yashkit Jain">
+        </div>
+        <h3 class="team-name">Yashkit Jain</h3>
+        <p class="team-role">Co-Founder</p>
+        <p class="team-bio">Yashkit built the operational framework that turned a documentation project into a scalable model for cultural and economic revival. His focus on market access and artisan partnerships forms the backbone of Re-Root's LIGHT methodology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg)">
+    <p class="section-label">The Origin Story</p>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start">
+      <h2 class="section-title">From Documentation to Movement</h2>
+      <div>
+        <p class="section-para">Founded from a simple realization: tribal art belongs on the global stage, not just in history books. As high schoolers with a vision for social entrepreneurship, Naisha and Yashkit built Re-Root to serve as a bridge.</p>
+        <p class="section-para">They identify regional communities with deep artistic legacies and provide the design intervention and market access needed to thrive in the 21st century. What started as a documentation project has evolved into a scalable model for cultural and economic revival.</p>
+      </div>
+    </div>
+  </section>
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</div>
+
+<!-- ========== KASHMIR PAGE ========== -->
+<div id="page-kashmir" class="page">
+  <div class="ktas-hero">
+    <div class="ktas-hero-content">
+      <p class="section-label">Communities — Chapter 01</p>
+      <h1>The Kashmir Tribal<br><em>Art Society</em></h1>
+      <p>Our pilot partnership with Shahida Khanam — reviving the heritage of the Gujjar Bakarwal community in Bandipora, Jammu & Kashmir.</p>
+    </div>
+  </div>
+
+  <!-- KTAS SPLIT -->
+  <div class="ktas-split">
+    <div class="ktas-img-col">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <path d="M20 100 Q35 40 50 70 Q65 100 80 30" stroke="var(--clay)" stroke-width="1.5" fill="none"/>
+        <circle cx="50" cy="70" r="4" fill="var(--gold)" opacity="0.7"/>
+      </svg>
+      <span style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone);margin-top:12px">Shahida Khanam</span>
+    </div>
+    <div class="ktas-text-col">
+      <p class="section-label">The Collaborator</p>
+      <h2 class="section-title" style="font-style:italic">Shahida Khanam</h2>
+      <p class="section-para">Founder of the Kashmir Tribal Art Society (Reg. No.: 7882), Shahida is a cultural practitioner dedicated to preserving the tribal heritage of the Gujjar Bakarwal community.</p>
+      <p class="section-para">Her journey began in 2016 after attending a Bal Rang cultural event in Madhya Pradesh, where she witnessed other tribal communities proudly maintaining their customs. Realising her own community's identity was disappearing, she began documenting oral histories from tribal elders in Bandipora — eventually establishing the Valley's first community-run museum.</p>
+      <p class="section-para">National recognition followed when Shahida was invited to present her designs before President Droupadi Murmu at Chashme Shahi.</p>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section" style="background:var(--ivorylight)">
+    <p class="section-label">What We've Built Together</p>
+    <h2 class="section-title">The Achievements</h2>
+    <ul class="achievement-list">
+      <li>
+        <div class="ach-num">01</div>
+        <div class="ach-text">
+          <h4>The Museum</h4>
+          <p>Supporting the Valley's first community-run museum for the Gujjar Bakarwal people — a permanent home for cultural memory in Bandipora.</p>
+        </div>
+      </li>
+      <li>
+        <div class="ach-num">02</div>
+        <div class="ach-text">
+          <h4>The Craft</h4>
+          <p>Modernizing Kasheeda Embroidery for the urban wardrobe — translating ancient motifs into contemporary fashion without erasing their cultural meaning.</p>
+        </div>
+      </li>
+      <li>
+        <div class="ach-num">03</div>
+        <div class="ach-text">
+          <h4>The People</h4>
+          <p>Empowering 200+ tribal women through 7 training centers across Bandipora — building sustainable livelihoods rooted in traditional craft.</p>
+        </div>
+      </li>
+      <li>
+        <div class="ach-num">04</div>
+        <div class="ach-text">
+          <h4>Presidential Recognition</h4>
+          <p>Shahida Khanam presented KTAS designs before President Droupadi Murmu at Chashme Shahi — national visibility for Gujjar Bakarwal heritage.</p>
+        </div>
+      </li>
+    </ul>
+    <div style="margin-top:48px">
+      <a href="#" class="btn-primary" style="background:var(--forest);color:var(--ivorylight)">Explore the KTAS Archive →</a>
+    </div>
+  </section>
+
+  <!-- COMMUNITY BAND -->
+  <div class="community-band">
+    <p class="section-label" style="color:rgba(245,240,232,0.5)">Who They Are</p>
+    <h2 class="section-title">The Gujjar Bakarwal Community</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px">
+      <div>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9;margin-bottom:20px">Among the largest Scheduled Tribe groups in Jammu and Kashmir, the Gujjar Bakarwal are known for their rich cultural heritage and deep connection with nature. Their pastoral lifestyle revolves around seasonal migration — <em style="color:var(--gold)">transhumance</em> — moving between lower valleys in winter and higher alpine pastures in summer.</p>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9">Every year, families travel established nomadic routes through the forests, mountains, and valleys of the Himalayas. These journeys are not only economic necessities but cultural traditions — passed down through the Gojri language, folk songs, and elder storytelling.</p>
+      </div>
+      <div>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9;margin-bottom:20px">Tribal women are the keepers of oral history and cultural memory. During evenings in temporary settlements, elders narrate stories about ancestral routes, customs, and community values — knowledge rarely written but carried through language.</p>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9">Through embroidered clothing, traditional dress, beadwork, and jewellery, these women ensure that traditional designs, techniques, and cultural meanings survive and are appreciated by future generations.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</div>
+
+<!-- ========== PROJECTS PAGE ========== -->
+<div id="page-projects" class="page">
+  <div class="projects-header">
+    <p class="section-label">Our Work</p>
+    <h1 class="section-title">The Project<br><em>Blueprint</em></h1>
+    <p class="section-para" style="margin-top:16px">Three interconnected initiatives that form a complete ecosystem — from memory to market.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card" onclick="toggleProject('digital')">
+      <div class="project-num">01</div>
+      <p class="project-tag">Archive & Memory</p>
+      <h3 class="project-title">Digital Archive</h3>
+      <p class="project-desc">Moving fragile tribal memories into a permanent, accessible online archive — ensuring no story is lost to time or geography.</p>
+      <p style="margin-top:20px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--indigo)">Read More ↓</p>
+    </div>
+    <div class="project-card" onclick="toggleProject('hunar')">
+      <div class="project-num">02</div>
+      <p class="project-tag">Craft Revival</p>
+      <h3 class="project-title">Hunar Project</h3>
+      <p class="project-desc">A craft-revival program where museum-grade motifs are applied to modern apparel — training young women in embroidery, dressmaking, and indigenous design.</p>
+      <p style="margin-top:20px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--indigo)">Read More ↓</p>
+    </div>
+    <div class="project-card" onclick="toggleProject('lokgeet')">
+      <div class="project-num">03</div>
+      <p class="project-tag">Oral History</p>
+      <h3 class="project-title">Lok Geet Documentation</h3>
+      <p class="project-desc">Recording the migration songs and oral histories of the Himalayan highlands before they fade — preserving language, memory, and cultural knowledge.</p>
+      <p style="margin-top:20px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--indigo)">Read More ↓</p>
+    </div>
+  </div>
+
+  <div id="expand-digital" class="project-expand">
+    <div style="max-width:800px">
+      <p class="section-label">Online Museum Archive</p>
+      <h2 class="section-title" style="font-style:italic">Digital Preservation Initiative</h2>
+      <p class="section-para">One of the key initiatives of Re-Root is the collaboration with Kashmir Tribal Art Society (KTAS) in curating the digital preparation of the museum collection. We are working to create an online museum archive where artefacts, photographs, and cultural narratives are documented and made accessible through digital platforms.</p>
+      <p class="section-para">This initiative helps preserve fragile materials, expand access for researchers and students, and allow people from different parts of the world to learn about Gujjar Bakarwal heritage — removing geography as a barrier to cultural understanding.</p>
+    </div>
+  </div>
+
+  <div id="expand-hunar" class="project-expand">
+    <div style="max-width:800px">
+      <p class="section-label">Craft Revival Program</p>
+      <h2 class="section-title" style="font-style:italic">The Hunar Project</h2>
+      <p class="section-para">The Hunar Project focuses on reviving traditional tribal crafts by training young women in embroidery, dressmaking, jewellery making, and indigenous design. The program preserves cultural knowledge while creating sustainable livelihood opportunities and strengthening pride in Gujjar–Bakarwal heritage.</p>
+      <p class="section-para">By working directly with community artisans, we ensure that museum-grade motifs — those carrying centuries of cultural meaning — are faithfully applied to contemporary garments, bridging the ancestral and the modern.</p>
+    </div>
+  </div>
+
+  <div id="expand-lokgeet" class="project-expand">
+    <div style="max-width:800px">
+      <p class="section-label">Oral History Documentation</p>
+      <h2 class="section-title" style="font-style:italic">The Lok Geet Project</h2>
+      <p class="section-para">The Lok Geet Project documents traditional folk songs and oral narratives of Gujjar and Bakarwal communities. The project records elders singing lok geet — preserving language, migration memories, and cultural knowledge encoded in melody and verse.</p>
+      <p class="section-para">These recordings are being safeguarded in our digital archive, ensuring these living traditions are available for future generations and researchers who would otherwise have no access to this disappearing knowledge.</p>
+    </div>
+  </div>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px;margin-top:80px">
+    <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</div>
+
+<!-- ========== STORE PAGE ========== -->
+<div id="page-store" class="page">
+  <div class="store-header">
+    <p class="section-label">High Art. Ethical Impact.</p>
+    <h1 class="section-title">The Collection</h1>
+    <p class="section-para" style="margin-top:16px">Every piece is a collaboration. By purchasing from Re-Root, you directly fund the salaries of regional artisans and the preservation of their local museums.</p>
+  </div>
+
+  <div style="padding:0 6vw">
+    <div class="store-filters">
+      <button class="filter-btn active" onclick="filterStore('all', this)">All</button>
+      <button class="filter-btn" onclick="filterStore('textiles', this)">Textiles</button>
+      <button class="filter-btn" onclick="filterStore('jewelry', this)">Tribal Jewelry</button>
+      <button class="filter-btn" onclick="filterStore('artifacts', this)">Handmade Artifacts</button>
+    </div>
+
+    <div class="store-grid">
+      <!-- ITEM 1 -->
+      <div class="store-item" data-cat="textiles">
+        <div class="store-img store-img-inner" style="background:linear-gradient(135deg,#DCC9A6,#8E877C)">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M10 50 Q20 10 30 30 Q40 50 50 10" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg>
+          <span class="placeholder-label" style="color:rgba(255,255,255,0.5);font-size:11px">Image</span>
+          <div class="craft-badge">Kasheeda Embroidery</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Bakarwal Migration Shawl</h3>
+          <p class="store-item-origin">Gujjar Bakarwal · Bandipora, Kashmir</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Hand-embroidered wool shawl with traditional Kasheeda motifs documenting seasonal migration patterns</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="store-item-price">₹ 8,400</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)">Wool · Silk Thread</span>
+          </div>
+          <a href="#" class="meet-artisan">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--ivorylight)">S</div>
+            <span>Meet the Artisan →</span>
+          </a>
+        </div>
+      </div>
+      <!-- ITEM 2 -->
+      <div class="store-item" data-cat="jewelry">
+        <div class="store-img" style="background:linear-gradient(135deg,#B35A2E,#3A342E)">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="20" stroke="rgba(255,255,255,0.3)" stroke-width="1"/><circle cx="30" cy="30" r="8" fill="rgba(226,178,60,0.4)"/></svg>
+          <span class="placeholder-label" style="color:rgba(255,255,255,0.4);font-size:11px">Image</span>
+          <div class="craft-badge">Traditional Beadwork</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Tribal Necklace — Dheli</h3>
+          <p class="store-item-origin">Gujjar Bakarwal · Bandipora, Kashmir</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Handcrafted silver and bead necklace using traditional Bakarwal ornamental techniques</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="store-item-price">₹ 5,200</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)">Silver · Glass Beads</span>
+          </div>
+          <a href="#" class="meet-artisan">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--ivorylight)">F</div>
+            <span>Meet the Artisan →</span>
+          </a>
+        </div>
+      </div>
+      <!-- ITEM 3 -->
+      <div class="store-item" data-cat="artifacts">
+        <div class="store-img" style="background:linear-gradient(135deg,#2E4A32,#6B7A3E)">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="15" y="15" width="30" height="30" stroke="rgba(255,255,255,0.3)" stroke-width="1" rx="2"/><path d="M15 30 L45 30 M30 15 L30 45" stroke="rgba(226,178,60,0.5)" stroke-width="0.5"/></svg>
+          <span class="placeholder-label" style="color:rgba(255,255,255,0.4);font-size:11px">Image</span>
+          <div class="craft-badge">Hand-woven</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Namda Floor Rug</h3>
+          <p class="store-item-origin">Gujjar Bakarwal · Bandipora, Kashmir</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Felted wool rug with geometric tribal patterns — a traditional craft of the Himalayan pastoral communities</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="store-item-price">₹ 12,000</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)">Felted Wool</span>
+          </div>
+          <a href="#" class="meet-artisan">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--indigo);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--ivorylight)">R</div>
+            <span>Meet the Artisan →</span>
+          </a>
+        </div>
+      </div>
+      <!-- ITEM 4 -->
+      <div class="store-item" data-cat="textiles">
+        <div class="store-img" style="background:linear-gradient(135deg,#2F5F63,#3A342E)">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M10 20 Q30 10 50 20 Q30 30 10 40 Q30 50 50 40" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/></svg>
+          <span class="placeholder-label" style="color:rgba(255,255,255,0.4);font-size:11px">Image</span>
+          <div class="craft-badge">Block Print</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Tribal Block-Print Dupatta</h3>
+          <p class="store-item-origin">Gujjar Bakarwal · Bandipora, Kashmir</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Hand block-printed dupatta using motifs from the community's embroidered heritage adapted to contemporary form</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="store-item-price">₹ 3,600</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)">Chanderi Silk</span>
+          </div>
+          <a href="#" class="meet-artisan">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--mahua);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--ivorylight)">N</div>
+            <span>Meet the Artisan →</span>
+          </a>
+        </div>
+      </div>
+      <!-- ITEM 5 -->
+      <div class="store-item" data-cat="jewelry">
+        <div class="store-img" style="background:linear-gradient(135deg,#E2B23C,#B35A2E)">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M20 20 L30 10 L40 20 L50 30 L40 40 L30 50 L20 40 L10 30 Z" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/></svg>
+          <span class="placeholder-label" style="color:rgba(255,255,255,0.6);font-size:11px">Image</span>
+          <div class="craft-badge">Tribal Silver</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Gojri Stacked Bangles</h3>
+          <p class="store-item-origin">Gujjar Bakarwal · Bandipora, Kashmir</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Set of three hand-hammered silver bangles with engraved Gojri folk motifs — worn ceremonially during migration festivities</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="store-item-price">₹ 4,800</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)">Sterling Silver</span>
+          </div>
+          <a href="#" class="meet-artisan">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--ivorylight)">H</div>
+            <span>Meet the Artisan →</span>
+          </a>
+        </div>
+      </div>
+      <!-- ITEM 6 -->
+      <div class="store-item" data-cat="artifacts">
+        <div class="store-img" style="background:linear-gradient(135deg,#8A4F5E,#2F5F63)">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M20 10 Q10 30 20 50 Q30 40 40 50 Q50 30 40 10 Q30 20 20 10Z" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/></svg>
+          <span class="placeholder-label" style="color:rgba(255,255,255,0.4);font-size:11px">Image</span>
+          <div class="craft-badge">Woodcraft</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Carved Walnut Memory Box</h3>
+          <p class="store-item-origin">Gujjar Bakarwal · Bandipora, Kashmir</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Hand-carved walnut box etched with migration route maps and tribal folklore symbols of the Bakarwal community</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="store-item-price">₹ 6,500</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)">Walnut Wood</span>
+          </div>
+          <a href="#" class="meet-artisan">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--dye);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold)">G</div>
+            <span>Meet the Artisan →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--dye);margin-top:80px;text-align:center">
+    <p class="section-label" style="color:var(--gold)">The Impact</p>
+    <h2 class="section-title" style="color:var(--ivorylight);font-style:italic;margin:0 auto">Every Purchase Funds a Future</h2>
+    <p style="color:rgba(245,240,232,0.6);max-width:560px;margin:20px auto 0;line-height:1.9;font-size:15px">100% of artisan revenue goes directly to the craftsperson. Re-Root takes nothing from the maker — our operating costs are funded through institutional partnerships and grants.</p>
+  </section>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px;border-top:1px solid rgba(245,240,232,0.1)">
+    <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</div>
+
+<!-- ========== PRESS PAGE ========== -->
+<div id="page-press" class="page">
+  <section class="section">
+    <p class="section-label">Media & Recognition</p>
+    <h1 class="section-title">Press &<br><em>Coverage</em></h1>
+    <div class="press-grid">
+      <div class="press-card">
+        <p class="press-source">MAP Academy · IMP-Art.org</p>
+        <h3 class="press-headline">"A Museum of Memories: Community-Led Preservation of Kashmir's Gojri Heritage"</h3>
+        <a href="https://imp-art.org/perspectives/dispatches/a-museum-of-memories-community-led-preservation-of-kashmirs-gojri-heritage/" target="_blank" class="press-link">Read the Feature →</a>
+      </div>
+      <div class="press-card">
+        <p class="press-source">Kashmir Times</p>
+        <h3 class="press-headline">"Gujjar Bakarwal Traditional Artefacts — Preserving a Living Culture"</h3>
+        <a href="https://kashmirtimes.com/culture/gujjar-bakerwal-traditional-artefacts" target="_blank" class="press-link">Read the Feature →</a>
+      </div>
+      <div class="press-card">
+        <p class="press-source">The Siasat Daily</p>
+        <h3 class="press-headline">"Young Tribal Girl Spearheads Heritage Preservation in Kashmir"</h3>
+        <a href="https://www.siasat.com/young-tribal-girl-spearheads-heritage-preservation-in-kashmir-2958664/" target="_blank" class="press-link">Read the Feature →</a>
+      </div>
+      <div class="press-card">
+        <p class="press-source">Kashmir News Service</p>
+        <h3 class="press-headline">"In Bandipora, A Tribal Woman Builds Museum to Save Gujjar Heritage"</h3>
+        <a href="https://www.knskashmir.com/in-bandipora--a-tribal-woman-builds-museum-to-save-gujjar-heritage-197463" target="_blank" class="press-link">Read the Feature →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--ivorylight)">
+    <p class="section-label">Presidential Recognition</p>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:center">
+      <div style="background:var(--beige);padding:60px;text-align:center">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--gold);font-weight:300">★</div>
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone);margin-top:12px">National Recognition</p>
+      </div>
+      <div>
+        <h2 class="section-title" style="font-style:italic">Presented Before<br>President Murmu</h2>
+        <p class="section-para">Shahida Khanam was invited to present KTAS designs at Chashme Shahi before President Droupadi Murmu — bringing the Gujjar Bakarwal craft tradition to the highest level of national visibility.</p>
+        <p class="section-para">This recognition reflects the significance of community-led cultural preservation and the growing national conversation around tribal heritage and sustainable craft economies.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>© 2025 Project Re-Root · Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</div>
+
+<script>
+function toggleMenu() {
+  var drawer = document.getElementById('mobile-drawer');
+  var overlay = document.getElementById('drawer-overlay');
+  var btn = document.getElementById('hamburger');
+  var open = drawer.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  overlay.classList.toggle('show', open);
+}
+function closeMenu() {
+  document.getElementById('mobile-drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('show');
+  document.getElementById('hamburger').classList.remove('open');
+}
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  var navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0, 0);
+  return false;
+}
+function toggleProject(id) {
+  var el = document.getElementById('expand-' + id);
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.project-expand').forEach(e => e.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+function filterStore(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.store-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

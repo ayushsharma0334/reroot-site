@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Meet the Team</title>
+<meta name="description" content="Meet the founders behind Project Re-Root and learn how the work grew from documentation into a cultural movement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="team.html" class="active" aria-current="page">Meet the Team</a></li>
+    <li><a href="communities.html">Communities</a></li>
+    <li><a href="initiatives.html">Initiatives</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="mission.html" class="mobile-link">Our Mission</a>
+  <a href="team.html" class="mobile-link active" aria-current="page">Meet the Team</a>
+  <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="initiatives.html" class="mobile-link">Initiatives</a>
+  <a href="press.html" class="mobile-link">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page">
+  <section class="section team-section" data-random-bg style="padding-bottom:0;--bg-tint:linear-gradient(180deg, rgba(58,52,46,0.93) 0%, rgba(58,52,46,0.95) 100%)">
+    <p class="section-label">The Founders</p>
+    <h1 class="section-title">The Minds Behind<br><em>Re-Root</em></h1>
+    <p class="section-para" style="margin-top:16px">Founded by high schoolers with a vision for social entrepreneurship &mdash; built to serve as a bridge between tribal legacy and the 21st-century marketplace.</p>
+    <div class="team-grid" style="margin-top:60px">
+      <div class="team-card">
+        <div class="founder-photo-frame">
+          <img src="img/naisha.jpeg" alt="Naisha Palawat">
+        </div>
+        <h3 class="team-name">Naisha Palawat</h3>
+        <p class="team-role">Founder</p>
+        <p class="team-bio">Founder of Project Re-Root, Naisha brings a designer's eye and a researcher's rigour to cultural preservation work. She identified the need to make tribal art not just visible, but commercially viable &mdash; giving communities economic agency alongside cultural pride.</p>
+      </div>
+      <div class="team-card">
+        <div class="founder-photo-frame">
+          <img src="img/Yashkit.png" alt="Yashkit Jain">
+        </div>
+        <h3 class="team-name">Yashkit Jain</h3>
+        <p class="team-role">Co-Founder</p>
+        <p class="team-bio">Yashkit built the operational framework that turned a documentation project into a scalable model for cultural and economic revival. His focus on market access and artisan partnerships forms the backbone of Re-Root's LIGHT methodology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg)">
+    <p class="section-label">The Origin Story</p>
+    <div class="story-split">
+      <h2 class="section-title">From Documentation to Movement</h2>
+      <div>
+        <p class="section-para">Founded from a simple realization: tribal art belongs on the global stage, not just in history books. As high schoolers with a vision for social entrepreneurship, Naisha and Yashkit built Re-Root to serve as a bridge.</p>
+        <p class="section-para">They identify regional communities with deep artistic legacies and provide the design intervention and market access needed to thrive in the 21st century. What started as a documentation project has evolved into a scalable model for cultural and economic revival.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</main>
+</body>
+</html>

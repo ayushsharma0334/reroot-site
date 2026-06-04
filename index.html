@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Rooted in Heritage, Woven for the Future</title>
+<meta name="description" content="Project Re-Root revives living tribal traditions through storytelling, artisan partnerships, and contemporary cultural design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="team.html">Meet the Team</a></li>
+    <li><a href="communities.html">Communities</a></li>
+    <li><a href="initiatives.html">Initiatives</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link active" aria-current="page">Home</a>
+  <a href="mission.html" class="mobile-link">Our Mission</a>
+  <a href="team.html" class="mobile-link">Meet the Team</a>
+  <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="initiatives.html" class="mobile-link">Initiatives</a>
+  <a href="press.html" class="mobile-link">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page">
+  <section class="hero-fullbleed">
+    <div class="hero-bg-pattern hero-home-bg"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-content-inner">
+        <p class="hero-tagline">Ancestral Soul. Modern Silhouette.</p>
+        <h1 class="hero-h1">We Re-Root<br>the Craft.<br><strong>You Wear<br>the Story.</strong></h1>
+        <p class="hero-sub">Project Re-Root is a catalyst for regional heritage. We find the world's most profound, at-risk tribal arts and translate them into contemporary fashion and lifestyle.</p>
+        <div class="hero-ctas">
+          <a href="communities.html" class="btn-primary">The Kashmir Chapter</a>
+          <a href="mission.html" class="btn-ghost">Our Vision</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="section pillars-section">
+    <div style="max-width:600px">
+      <p class="section-label">The LIGHT Framework</p>
+      <h2 class="section-title">Five Pillars of Cultural Revival</h2>
+      <p class="section-para">We don't just save cultures &mdash; we make them market-ready. Our five-pillar model creates sustainable ecosystems around living traditions.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-letter">L</div>
+        <div class="pillar-name">Literacy</div>
+        <p class="pillar-desc">Documenting oral history before it fades from living memory</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">I</div>
+        <div class="pillar-name">Income</div>
+        <p class="pillar-desc">Fair trade models ensuring artisans receive full value for their craft</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">G</div>
+        <div class="pillar-name">Growth</div>
+        <p class="pillar-desc">Scalable frameworks for tribal and cultural revival</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">H</div>
+        <div class="pillar-name">Hope</div>
+        <p class="pillar-desc">Turning cultural erasure into community pride and identity</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">T</div>
+        <div class="pillar-name">Training</div>
+        <p class="pillar-desc">Deliberate skill-sharing to empower the next generation</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-band">
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Tribal Women Empowered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Training Centres</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">First Community Museum</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&#8734;</div>
+      <div class="stat-label">Stories Documented</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div style="max-width:800px; margin:0 auto; text-align:center">
+      <p class="section-label">Tradition isn't a relic</p>
+      <blockquote class="pullquote" style="border-left:none;padding-left:0;text-align:center">
+        "It's a living blueprint.<br>We're just changing the medium."
+      </blockquote>
+      <p class="section-para" style="margin:0 auto 40px;text-align:center">Many cultural practices, skills, and stories exist not in written form, but in the everyday lives of communities &mdash; through what people make, wear, and use.</p>
+      <a href="initiatives.html" class="btn-primary">Explore the Initiatives &rarr;</a>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-motif">&#10022;</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <section class="feature-split">
+    <div class="feature-photo-panel" data-random-bg style="--bg-tint:linear-gradient(180deg, rgba(245,240,232,0.08) 0%, rgba(26,23,20,0.18) 100%)">
+      <span>Featured Chapter</span>
+    </div>
+    <div style="padding:80px 6vw;background:var(--ivorylight)">
+      <p class="section-label">Featured Partnership</p>
+      <h2 class="section-title" style="font-style:italic">The Kashmir<br>Tribal Arts Society</h2>
+      <p class="section-para">Our pilot partnership with Shahida Khanam &mdash; reviving the heritage of the Gujjar Bakarwal community in Bandipora through embroidery, oral history, and a first-of-its-kind community museum.</p>
+      <a href="communities.html" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px">Explore the Chapter &rarr;</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/re-root-logo.png" alt="RE-ROOT">
+        <p>Rooted in Heritage, Woven for the Future. We find the world's most profound tribal arts and translate them into contemporary form.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="team.html">The Founders</a></li>
+          <li><a href="communities.html">Communities</a></li>
+          <li><a href="initiatives.html">Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Initiatives</h4>
+        <ul>
+          <li><a href="initiatives.html#digital">Digital Archive</a></li>
+          <li><a href="initiatives.html#hunar">Hunar Project</a></li>
+          <li><a href="initiatives.html#lokgeet">Lok Geet</a></li>
+          <li><a href="communities.html">KTAS Museum</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/project.reroot__?igsh=MTBrZWE5NHo5NWFqdw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="press.html">Press Kit</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+    </div>
+  </footer>
+</main>
+</body>
+</html>

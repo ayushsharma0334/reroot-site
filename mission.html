@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Our Mission</title>
+<meta name="description" content="Learn how Project Re-Root preserves oral history, supports artisans, and builds living cultural archives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html" class="active" aria-current="page">Our Mission</a></li>
+    <li><a href="team.html">Meet the Team</a></li>
+    <li><a href="communities.html">Communities</a></li>
+    <li><a href="initiatives.html">Initiatives</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="mission.html" class="mobile-link active" aria-current="page">Our Mission</a>
+  <a href="team.html" class="mobile-link">Meet the Team</a>
+  <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="initiatives.html" class="mobile-link">Initiatives</a>
+  <a href="press.html" class="mobile-link">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page">
+  <section class="section store-header pattern-header-bg" style="background-color:var(--ivorylight);padding-bottom:40px">
+    <p class="section-label">About Project Re-Root</p>
+    <h1 class="section-title">Reviving Tradition,<br><em>Reimagining Craft.</em></h1>
+  </section>
+
+  <section class="section mission-grid">
+    <div>
+      <div class="mission-img">
+        <img src="img/feature.png" alt="Artisan craftwork and textile storytelling">
+      </div>
+    </div>
+    <div>
+      <blockquote class="pullquote">
+        "Many cultural practices exist not in written form, but in what people make, wear, and use."
+      </blockquote>
+      <p class="section-para">Project Re-Root creates platforms that bring visibility to these traditions while supporting artisans through skill development and global outreach.</p>
+      <p class="section-para">By recording the memories of elders, reviving traditional embroidery and dress, and supporting women artisans with training and livelihood opportunities, the organization works to ensure that tribal knowledge continues to thrive.</p>
+      <p class="section-para">Our vision is to build a living cultural archive where traditions are not only preserved but actively practiced and shared with future generations.</p>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-motif">&#10022;</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <section class="section pillars-section">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">The LIGHT Model</h2>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-letter">L</div>
+        <div class="pillar-name">Literacy</div>
+        <p class="pillar-desc">Documenting oral history, migration songs, and community narratives in accessible digital formats</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">I</div>
+        <div class="pillar-name">Income</div>
+        <p class="pillar-desc">Establishing fair-trade pipelines that channel global market access back to regional artisans</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">G</div>
+        <div class="pillar-name">Growth</div>
+        <p class="pillar-desc">Developing replicable, scalable frameworks adaptable to diverse tribal communities</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">H</div>
+        <div class="pillar-name">Hope</div>
+        <p class="pillar-desc">Reframing cultural erasure as opportunity &mdash; restoring pride and global visibility</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-letter">T</div>
+        <div class="pillar-name">Training</div>
+        <p class="pillar-desc">Running deliberate skill-sharing programs ensuring the next generation carries forward the craft</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--dye);color:var(--ivorylight)">
+    <p class="section-label" style="color:var(--gold)">Our Vision</p>
+    <h2 class="section-title" style="color:var(--ivorylight);font-style:italic;max-width:700px">
+      "A living cultural archive where traditions are not only preserved but actively practiced."
+    </h2>
+    <p style="color:rgba(245,240,232,0.65);max-width:600px;margin-top:24px;line-height:1.9">
+      Through our museum, craft initiatives, and storytelling projects, we seek to celebrate identity, strengthen community pride, and sustain cultural heritage &mdash; connecting heritage with contemporary spaces so that living traditions are practiced, valued, and sustained.
+    </p>
+  </section>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px;border-top:1px solid rgba(245,240,232,0.1)">
+    <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</main>
+</body>
+</html>

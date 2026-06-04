@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Communities</title>
+<meta name="description" content="Explore Re-Root's Kashmir Tribal Art Society partnership and the living traditions of the Gujjar Bakarwal community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="team.html">Meet the Team</a></li>
+    <li><a href="communities.html" class="active" aria-current="page">Communities</a></li>
+    <li><a href="initiatives.html">Initiatives</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="mission.html" class="mobile-link">Our Mission</a>
+  <a href="team.html" class="mobile-link">Meet the Team</a>
+  <a href="communities.html" class="mobile-link active" aria-current="page">Communities</a>
+  <a href="initiatives.html" class="mobile-link">Initiatives</a>
+  <a href="press.html" class="mobile-link">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page">
+  <div class="ktas-hero" data-random-bg style="--bg-tint:linear-gradient(180deg, rgba(46,74,50,0.82) 0%, rgba(46,74,50,0.9) 100%)">
+    <div class="ktas-hero-content">
+      <p class="section-label">Communities &mdash; Chapter 01</p>
+      <h1>The Kashmir Tribal<br><em>Art Society</em></h1>
+      <p>Our pilot partnership with Shahida Khanam &mdash; reviving the heritage of the Gujjar Bakarwal community in Bandipora, Jammu &amp; Kashmir.</p>
+    </div>
+  </div>
+
+  <div class="ktas-split">
+    <div class="ktas-img-col portrait-cover">
+      <img src="img/shahida khanum.png" alt="Shahida Khanam in traditional attire">
+    </div>
+    <div class="ktas-text-col">
+      <p class="section-label">The Collaborator</p>
+      <h2 class="section-title" style="font-style:italic">Shahida Khanam</h2>
+      <p class="section-para">Founder of the Kashmir Tribal Art Society (Reg. No.: 7882), Shahida is a cultural practitioner dedicated to preserving the tribal heritage of the Gujjar Bakarwal community.</p>
+      <p class="section-para">Her journey began in 2016 after attending a Bal Rang cultural event in Madhya Pradesh, where she witnessed other tribal communities proudly maintaining their customs. Realising her own community's identity was disappearing, she began documenting oral histories from tribal elders in Bandipora &mdash; eventually establishing the Valley's first community-run museum.</p>
+      <p class="section-para">National recognition followed when Shahida was invited to present her designs before President Droupadi Murmu at Chashme Shahi.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--ivorylight)">
+    <p class="section-label">What We've Built Together</p>
+    <h2 class="section-title">The Achievements</h2>
+    <ul class="achievement-list">
+      <li>
+        <div class="ach-num">01</div>
+        <div class="ach-text">
+          <h4>The Museum</h4>
+          <p>Supporting the Valley's first community-run museum for the Gujjar Bakarwal people &mdash; a permanent home for cultural memory in Bandipora.</p>
+        </div>
+      </li>
+      <li>
+        <div class="ach-num">02</div>
+        <div class="ach-text">
+          <h4>The Craft</h4>
+          <p>Modernizing Kasheeda Embroidery for the urban wardrobe &mdash; translating ancient motifs into contemporary fashion without erasing their cultural meaning.</p>
+        </div>
+      </li>
+      <li>
+        <div class="ach-num">03</div>
+        <div class="ach-text">
+          <h4>The People</h4>
+          <p>Empowering 200+ tribal women through 7 training centers across Bandipora &mdash; building sustainable livelihoods rooted in traditional craft.</p>
+        </div>
+      </li>
+      <li>
+        <div class="ach-num">04</div>
+        <div class="ach-text">
+          <h4>Presidential Recognition</h4>
+          <p>Shahida Khanam presented KTAS designs before President Droupadi Murmu at Chashme Shahi &mdash; national visibility for Gujjar Bakarwal heritage.</p>
+        </div>
+      </li>
+    </ul>
+    <div style="margin-top:48px">
+      <a href="initiatives.html#digital" class="btn-primary" style="background:var(--forest);color:var(--ivorylight)">Explore the KTAS Archive &rarr;</a>
+    </div>
+  </section>
+
+  <div class="community-band">
+    <p class="section-label" style="color:rgba(245,240,232,0.5)">Who They Are</p>
+    <h2 class="section-title">The Gujjar Bakarwal Community</h2>
+    <div class="community-grid">
+      <div>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9;margin-bottom:20px">Among the largest Scheduled Tribe groups in Jammu and Kashmir, the Gujjar Bakarwal are known for their rich cultural heritage and deep connection with nature. Their pastoral lifestyle revolves around seasonal migration &mdash; <em style="color:var(--gold)">transhumance</em> &mdash; moving between lower valleys in winter and higher alpine pastures in summer.</p>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9">Every year, families travel established nomadic routes through the forests, mountains, and valleys of the Himalayas. These journeys are not only economic necessities but cultural traditions &mdash; passed down through the Gojri language, folk songs, and elder storytelling.</p>
+      </div>
+      <div>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9;margin-bottom:20px">Tribal women are the keepers of oral history and cultural memory. During evenings in temporary settlements, elders narrate stories about ancestral routes, customs, and community values &mdash; knowledge rarely written but carried through language.</p>
+        <p style="color:rgba(245,240,232,0.75);line-height:1.9">Through embroidered clothing, traditional dress, beadwork, and jewellery, these women ensure that traditional designs, techniques, and cultural meanings survive and are appreciated by future generations.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</main>
+</body>
+</html>

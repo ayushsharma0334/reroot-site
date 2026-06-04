@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Press</title>
+<meta name="description" content="Read media coverage and recognition highlighting Project Re-Root and the Kashmir Tribal Art Society partnership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="team.html">Meet the Team</a></li>
+    <li><a href="communities.html">Communities</a></li>
+    <li><a href="initiatives.html">Initiatives</a></li>
+    <li><a href="press.html" class="active" aria-current="page">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="mission.html" class="mobile-link">Our Mission</a>
+  <a href="team.html" class="mobile-link">Meet the Team</a>
+  <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="initiatives.html" class="mobile-link">Initiatives</a>
+  <a href="press.html" class="mobile-link active" aria-current="page">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page">
+  <section class="section store-header pattern-header-bg">
+    <p class="section-label">Media &amp; Recognition</p>
+    <h1 class="section-title">Press &amp;<br><em>Coverage</em></h1>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="press-grid">
+      <div class="press-card">
+        <p class="press-source">MAP Academy &middot; IMP-Art.org</p>
+        <h3 class="press-headline">"A Museum of Memories: Community-Led Preservation of Kashmir's Gojri Heritage"</h3>
+        <a href="https://imp-art.org/perspectives/dispatches/a-museum-of-memories-community-led-preservation-of-kashmirs-gojri-heritage/" target="_blank" rel="noopener noreferrer" class="press-link">Read the Feature &rarr;</a>
+      </div>
+      <div class="press-card">
+        <p class="press-source">Kashmir Times</p>
+        <h3 class="press-headline">"Gujjar Bakarwal Traditional Artefacts &mdash; Preserving a Living Culture"</h3>
+        <a href="https://kashmirtimes.com/culture/gujjar-bakerwal-traditional-artefacts" target="_blank" rel="noopener noreferrer" class="press-link">Read the Feature &rarr;</a>
+      </div>
+      <div class="press-card">
+        <p class="press-source">The Siasat Daily</p>
+        <h3 class="press-headline">"Young Tribal Girl Spearheads Heritage Preservation in Kashmir"</h3>
+        <a href="https://www.siasat.com/young-tribal-girl-spearheads-heritage-preservation-in-kashmir-2958664/" target="_blank" rel="noopener noreferrer" class="press-link">Read the Feature &rarr;</a>
+      </div>
+      <div class="press-card">
+        <p class="press-source">Kashmir News Service</p>
+        <h3 class="press-headline">"In Bandipora, A Tribal Woman Builds Museum to Save Gujjar Heritage"</h3>
+        <a href="https://www.knskashmir.com/in-bandipora--a-tribal-woman-builds-museum-to-save-gujjar-heritage-197463" target="_blank" rel="noopener noreferrer" class="press-link">Read the Feature &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--ivorylight)">
+    <p class="section-label">Presidential Recognition</p>
+    <div class="recognition-grid">
+      <div class="recognition-photo">
+        <img src="img/president.jpg" alt="President Droupadi Murmu">
+      </div>
+      <div>
+        <h2 class="section-title" style="font-style:italic">Presented Before<br>President Murmu</h2>
+        <p class="section-para">Shahida Khanam was invited to present KTAS designs at Chashme Shahi before President Droupadi Murmu &mdash; bringing the Gujjar Bakarwal craft tradition to the highest level of national visibility.</p>
+        <p class="section-para">This recognition reflects the significance of community-led cultural preservation and the growing national conversation around tribal heritage and sustainable craft economies.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</main>
+</body>
+</html>
