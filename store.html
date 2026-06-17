@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-ROOT - Store</title>
+<meta name="description" content="Shop Re-Root's craft capsule of embroidered headwear, potli bags, tops, and kurtas. Checkout is under progress for now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/re-root-logo.png" alt="RE-ROOT">
+    <span class="visually-hidden">RE-ROOT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="team.html">Meet the Team</a></li>
+    <li><a href="communities.html">Communities</a></li>
+    <li><a href="museum-archive.html">Museum Archive</a></li>
+    <li><a href="initiatives.html">Initiatives</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="store.html" class="nav-store active" aria-current="page">The Store</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="mission.html" class="mobile-link">Our Mission</a>
+  <a href="team.html" class="mobile-link">Meet the Team</a>
+  <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="museum-archive.html" class="mobile-link">Museum Archive</a>
+  <a href="initiatives.html" class="mobile-link">Initiatives</a>
+  <a href="press.html" class="mobile-link">Press</a>
+  <a href="donate.html" class="mobile-link">Donate</a>
+  <a href="store.html" class="mobile-link mobile-link-store active" aria-current="page">The Store</a>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+
+<main class="page store-page">
+  <section class="store-header pattern-header-bg store-hero">
+    <div class="store-hero-copy">
+      <p class="section-label">The Store</p>
+      <h1 class="section-title" style="font-style:italic">A Capsule of Living Craft</h1>
+      <p class="section-para" style="margin-top:16px">A small collection of pieces shaped with the same care as the stories behind them. Every product supports artisan livelihoods. For now, checkout is still being built, so each buy button opens a progress notice.</p>
+      <div class="store-chip-row">
+        <span class="store-chip">Feature under progress</span>
+        <span class="store-chip">Artisan-first capsule</span>
+        <span class="store-chip">Rooted in Kashmir</span>
+      </div>
+    </div>
+    <aside class="store-hero-note">
+      <p class="store-hero-note-label">Shop status</p>
+      <h2>Checkout is not live yet</h2>
+      <p>Browse the collection, read the details, and tap any buy button to open a progress notice while we finish the storefront.</p>
+    </aside>
+  </section>
+
+  <section class="store-catalog">
+    <div class="store-catalog-head">
+      <p class="section-label">Available Pieces</p>
+      <h2 class="section-title" style="font-style:italic">Four signature forms</h2>
+      <p class="section-para" style="margin-top:12px">These are the first pieces in the capsule. Buying is paused for now, but every card is ready to preview the craft, color, and silhouette of the collection.</p>
+    </div>
+
+    <div class="store-grid">
+      <article class="store-item">
+        <div class="store-img">
+          <img src="img/product-img/WhatsApp Image 2026-06-17 at 16.52.26.jpeg" alt="Crimson Cap" loading="lazy" style="object-position:center center">
+          <div class="craft-badge">Hand embroidery</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Crimson Cap</h3>
+          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
+          <p class="store-item-desc">Hand-embroidered topi in bold fuchsia and red, with intricate geometric needlework, fringe edging, and gold bead detailing. A wearable piece of craft heritage as striking as any accessory you'll find.</p>
+          <div class="store-buy-row">
+            <span class="store-item-price">&#8377;1,500/&#8211;</span>
+            <button type="button" class="buy-btn" onclick="showStoreProgress('Crimson Cap')">Buy now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-item">
+        <div class="store-img">
+          <img src="img/product-img/WhatsApp Image 2026-06-17 at 16.52.25.jpeg" alt="Wildfire Potli" loading="lazy" style="object-position:center center">
+          <div class="craft-badge">Potli bag</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Wildfire Potli</h3>
+          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
+          <p class="store-item-desc">Hand-embroidered potli bag bursting with colour, geometric patterns, multicolour tassels, and pom-pom fringe that makes a statement all on its own. The perfect finishing touch to any ethnic outfit.</p>
+          <div class="store-buy-row">
+            <span class="store-item-price">&#8377;2,500/&#8211;</span>
+            <button type="button" class="buy-btn" onclick="showStoreProgress('Wildfire Potli')">Buy now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-item">
+        <div class="store-img">
+          <img src="img/product-img/WhatsApp Image 2026-06-17 at 12.26.41.jpeg" alt="Ember Top" loading="lazy">
+          <div class="craft-badge">Modal</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Ember Top</h3>
+          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
+          <p class="store-item-desc">Slip-style embroidered top with tie-up shoulders and a V-neckline. Lightweight and effortlessly cool. Pairs with anything from trousers to denim. Wear it out or layer it up. Fabric: modal.</p>
+          <div class="store-buy-row">
+            <span class="store-item-price">&#8377;8,000/&#8211;</span>
+            <button type="button" class="buy-btn" onclick="showStoreProgress('Ember Top')">Buy now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-item">
+        <div class="store-img">
+          <img src="img/product-img/WhatsApp Image 2026-06-17 at 16.52.23.jpeg" alt="Midnight Bloom Kurta" loading="lazy">
+          <div class="craft-badge">Festive wear</div>
+        </div>
+        <div class="store-info">
+          <h3 class="store-item-name">Midnight Bloom Kurta</h3>
+          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
+          <p class="store-item-desc">Anarkali kurta with embroidered hem and tassel detailing. Floor-length and effortlessly dramatic, made for festive evenings, cultural gatherings, or any occasion that calls for presence. Fabric: modal.</p>
+          <div class="store-buy-row">
+            <span class="store-item-price">&#8377;8,000/&#8211;</span>
+            <button type="button" class="buy-btn" onclick="showStoreProgress('Midnight Bloom Kurta')">Buy now</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer style="background:var(--dye);color:rgba(245,240,232,0.5);padding:40px 6vw;text-align:center;font-size:13px">
+    <p>&copy; 2025 Project Re-Root &middot; Rooted in Culture. Designed for Impact.</p>
+  </footer>
+</main>
+
+<div class="store-modal" id="store-progress-modal" aria-hidden="true">
+  <div class="store-modal-backdrop" onclick="hideStoreProgress()"></div>
+  <div class="store-modal-card" role="dialog" aria-modal="true" aria-labelledby="store-progress-title">
+    <button type="button" class="store-modal-close" onclick="hideStoreProgress()" aria-label="Close notice">&times;</button>
+    <p class="section-label">Feature under progress</p>
+    <h2 class="section-title" id="store-progress-title" style="font-style:italic">Checkout coming soon</h2>
+    <p class="section-para" id="store-progress-body">Select an item to see the progress notice for this collection.</p>
+    <div class="store-modal-actions">
+      <button type="button" class="buy-btn" onclick="hideStoreProgress()">Continue browsing</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -22,10 +22,11 @@
     <li><a href="mission.html">Our Mission</a></li>
     <li><a href="team.html">Meet the Team</a></li>
     <li><a href="communities.html">Communities</a></li>
+    <li><a href="museum-archive.html">Museum Archive</a></li>
     <li><a href="initiatives.html">Initiatives</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="donate.html" class="active" aria-current="page">Donate</a></li>
-    <li><a href="#" class="nav-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a></li>
+    <li><a href="store.html" class="nav-store">The Store</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -36,17 +37,47 @@
   <a href="mission.html" class="mobile-link">Our Mission</a>
   <a href="team.html" class="mobile-link">Meet the Team</a>
   <a href="communities.html" class="mobile-link">Communities</a>
+  <a href="museum-archive.html" class="mobile-link">Museum Archive</a>
   <a href="initiatives.html" class="mobile-link">Initiatives</a>
   <a href="press.html" class="mobile-link">Press</a>
   <a href="donate.html" class="mobile-link active" aria-current="page">Donate</a>
-  <a href="#" class="mobile-link mobile-link-store" onclick="return false;" aria-disabled="true" title="Store coming soon">The Store</a>
+  <a href="store.html" class="mobile-link mobile-link-store">The Store</a>
 </div>
 <div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
 
 <main class="page">
-  <section class="section store-header pattern-header-bg">
-    <p class="section-label">Support Re-Root</p>
-    <h1 class="section-title">Donate</h1>
+  <section class="section store-header pattern-header-bg donate-hero">
+    <div class="donate-hero-copy">
+      <p class="section-label">Support Re-Root</p>
+      <h1 class="section-title" style="font-style:italic">Donate</h1>
+      <p class="section-para">Direct transfers help us support artisan livelihoods and keep community craft work moving forward.</p>
+      <div class="hero-ctas">
+        <a href="#bank-details" class="btn-primary">SUPPORT RE-ROOT</a>
+      </div>
+    </div>
+    <aside class="donate-card" id="bank-details">
+      <p class="donate-card-label">Bank transfer details</p>
+      <dl class="donate-details">
+        <div class="donate-detail">
+          <dt>Bank account holder name</dt>
+          <dd>NAISHA PALAWAT</dd>
+        </div>
+        <div class="donate-detail">
+          <dt>Account number</dt>
+          <dd>539010173350</dd>
+        </div>
+        <div class="donate-detail">
+          <dt>IFSC code</dt>
+          <dd>KKBK0003541</dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+
+  <section class="section donate-note">
+    <p class="section-label">Why it matters</p>
+    <h2 class="section-title">Your support goes directly into artisan-led work</h2>
+    <p class="section-para">Every contribution directly funds artisan training, product development, and oral history documentation. You're not only donating to an organisation but you're keeping a tradition alive.</p>
   </section>
 </main>
 </body>
