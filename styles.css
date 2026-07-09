@@ -1202,6 +1202,14 @@ nav {
   cursor: pointer;
 }
 
+.archive-lightbox-stage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 12px;
+}
+
 .archive-lightbox-media {
   background: #1e1915;
   position: relative;
@@ -1210,6 +1218,7 @@ nav {
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 320px;
 }
 
 .archive-lightbox-media img {
@@ -1253,11 +1262,42 @@ nav {
   color: rgba(245, 240, 232, 0.72);
 }
 
+.archive-lightbox-thumbs {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.archive-lightbox-thumb {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: 1px solid rgba(245, 240, 232, 0.16);
+  background: rgba(245, 240, 232, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.archive-lightbox-thumb:hover,
+.archive-lightbox-thumb.active {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.archive-lightbox-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .archive-lightbox-copy {
   padding: 32px 20px 20px 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 320px;
 }
 
 .archive-lightbox-copy .section-label {
