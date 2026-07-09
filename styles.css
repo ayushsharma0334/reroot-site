@@ -1051,17 +1051,20 @@ nav {
   width: 100%;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
+  align-items: start;
 }
 
 .archive-tile {
   appearance: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   border: none;
   background: transparent;
   padding: 0;
   text-align: left;
   cursor: pointer;
+  min-width: 0;
 }
 
 .archive-tile:hover .archive-frame,
@@ -1184,6 +1187,7 @@ nav {
   padding: 14px;
   display: flex;
   align-items: center;
+  gap: 20px;
   animation: fadeUp 0.25s ease;
 }
 
@@ -1293,11 +1297,12 @@ nav {
 }
 
 .archive-lightbox-copy {
-  padding: 32px 20px 20px 4px;
+  padding: 0 4px 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 320px;
+  flex: 0 0 280px;
 }
 
 .archive-lightbox-copy .section-label {
@@ -1881,6 +1886,23 @@ footer {
 }
 
 @media (max-width: 900px) {
+  .archive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .archive-lightbox-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .archive-lightbox-copy {
+    max-width: none;
+    flex: 1 1 auto;
+    padding: 0 4px 4px;
+  }
+
   .hero-content {
     flex-direction: column;
     padding: 60px 6vw 40px;
@@ -1928,14 +1950,6 @@ footer {
     align-items: flex-start;
   }
 
-  .archive-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .archive-lightbox-panel {
-    padding: 12px;
-  }
-
   .archive-lightbox-media img {
     max-height: min(72vh, 760px);
   }
@@ -1972,17 +1986,13 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .store-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .store-page .store-grid {
-    grid-template-columns: 1fr;
-  }
-
   .archive-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
+  }
+
+  .archive-meta h3 {
+    font-size: 15px;
   }
 
   .archive-lightbox {
@@ -1992,6 +2002,24 @@ footer {
   .archive-lightbox-panel {
     padding: 10px;
   }
+
+  .archive-lightbox-media {
+    min-height: 220px;
+  }
+
+  .archive-lightbox-thumb {
+    width: 56px;
+    height: 56px;
+  }
+
+  .store-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-page .store-grid {
+    grid-template-columns: 1fr;
+  }
+
 
   .archive-lightbox-media img {
     max-height: min(68vh, 620px);
