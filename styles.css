@@ -603,6 +603,18 @@ nav {
   padding-left: 28px;
 }
 
+.team-hero-banner {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.team-hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .team-section {
   background: var(--dye);
 }
