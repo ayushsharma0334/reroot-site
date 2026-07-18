@@ -48,93 +48,29 @@
 <main class="page store-page">
   <section class="store-header pattern-header-bg store-hero">
     <div class="store-hero-copy">
-      <p class="section-label">The Store</p>
-      <h1 class="section-title" style="font-style:italic">A Capsule of Living Craft</h1>
-      <p class="section-para" style="margin-top:16px">A small collection of pieces shaped with the same care as the stories behind them. Every product supports artisan livelihoods. For now, checkout is still being built, so each buy button opens a progress notice.</p>
-      <div class="store-chip-row">
-        <span class="store-chip">Feature under progress</span>
-        <span class="store-chip">Artisan-first capsule</span>
-        <span class="store-chip">Rooted in Kashmir</span>
+      <p class="section-label" id="store-hero-label">The Store</p>
+      <h1 class="section-title" id="store-hero-title" style="font-style:italic">A Capsule of Living Craft</h1>
+      <p class="section-para" id="store-hero-desc" style="margin-top:16px">A small collection of pieces shaped with the same care as the stories behind them. Every product supports artisan livelihoods. For now, checkout is still being built, so each buy button opens a progress notice.</p>
+      <div class="store-chip-row" id="store-chips-container">
+        <!-- Loaded dynamically via script.js -->
       </div>
     </div>
     <aside class="store-hero-note">
-      <p class="store-hero-note-label">Shop status</p>
-      <h2>Checkout is not live yet</h2>
-      <p>Browse the collection, read the details, and tap any buy button to open a progress notice while we finish the storefront.</p>
+      <p class="store-hero-note-label" id="store-note-label">Shop status</p>
+      <h2 id="store-note-title">Checkout is not live yet</h2>
+      <p id="store-note-desc">Browse the collection, read the details, and tap any buy button to open a progress notice while we finish the storefront.</p>
     </aside>
   </section>
 
   <section class="store-catalog">
     <div class="store-catalog-head">
-      <p class="section-label">Available Pieces</p>
-      <h2 class="section-title" style="font-style:italic">Four signature forms</h2>
-      <p class="section-para" style="margin-top:12px">These are the first pieces in the capsule. Buying is paused for now, but every card is ready to preview the craft, color, and silhouette of the collection.</p>
+      <p class="section-label" id="store-cat-label">Available Pieces</p>
+      <h2 class="section-title" id="store-cat-title" style="font-style:italic">Four signature forms</h2>
+      <p class="section-para" id="store-cat-desc" style="margin-top:12px">These are the first pieces in the capsule. Buying is paused for now, but every card is ready to preview the craft, color, and silhouette of the collection.</p>
     </div>
 
-    <div class="store-grid">
-      <article class="store-item">
-        <div class="store-img">
-          <img src="img/product-img/WhatsApp Image 2026-06-17 at 16.52.26.jpeg" alt="Crimson Cap" loading="lazy" style="object-position:center center">
-          <div class="craft-badge">Hand embroidery</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-item-name">Crimson Cap</h3>
-          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
-          <p class="store-item-desc">Hand-embroidered topi in bold fuchsia and red, with intricate geometric needlework, fringe edging, and gold bead detailing. A wearable piece of craft heritage as striking as any accessory you'll find.</p>
-          <div class="store-buy-row">
-            <span class="store-item-price">&#8377;1,500/&#8211;</span>
-            <button type="button" class="buy-btn" onclick="showStoreProgress('Crimson Cap')">Buy now</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="store-item">
-        <div class="store-img">
-          <img src="img/product-img/WhatsApp Image 2026-06-17 at 16.52.25.jpeg" alt="Wildfire Potli" loading="lazy" style="object-position:center center">
-          <div class="craft-badge">Potli bag</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-item-name">Wildfire Potli</h3>
-          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
-          <p class="store-item-desc">Hand-embroidered potli bag bursting with colour, geometric patterns, multicolour tassels, and pom-pom fringe that makes a statement all on its own. The perfect finishing touch to any ethnic outfit.</p>
-          <div class="store-buy-row">
-            <span class="store-item-price">&#8377;2,500/&#8211;</span>
-            <button type="button" class="buy-btn" onclick="showStoreProgress('Wildfire Potli')">Buy now</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="store-item">
-        <div class="store-img">
-          <img src="img/product-img/WhatsApp Image 2026-06-17 at 12.26.41.jpeg" alt="Ember Top" loading="lazy">
-          <div class="craft-badge">Modal</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-item-name">Ember Top</h3>
-          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
-          <p class="store-item-desc">Slip-style embroidered top with tie-up shoulders and a V-neckline. Lightweight and effortlessly cool. Pairs with anything from trousers to denim. Wear it out or layer it up. Fabric: modal.</p>
-          <div class="store-buy-row">
-            <span class="store-item-price">&#8377;8,000/&#8211;</span>
-            <button type="button" class="buy-btn" onclick="showStoreProgress('Ember Top')">Buy now</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="store-item">
-        <div class="store-img">
-          <img src="img/product-img/WhatsApp Image 2026-06-17 at 16.52.23.jpeg" alt="Midnight Bloom Kurta" loading="lazy">
-          <div class="craft-badge">Festive wear</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-item-name">Midnight Bloom Kurta</h3>
-          <p class="store-item-origin">Gujjar Bakarwal &middot; Bandipora, Kashmir</p>
-          <p class="store-item-desc">Anarkali kurta with embroidered hem and tassel detailing. Floor-length and effortlessly dramatic, made for festive evenings, cultural gatherings, or any occasion that calls for presence. Fabric: modal.</p>
-          <div class="store-buy-row">
-            <span class="store-item-price">&#8377;8,000/&#8211;</span>
-            <button type="button" class="buy-btn" onclick="showStoreProgress('Midnight Bloom Kurta')">Buy now</button>
-          </div>
-        </div>
-      </article>
+    <div class="store-grid" id="store-products-grid">
+      <!-- Loaded dynamically via script.js -->
     </div>
   </section>
 

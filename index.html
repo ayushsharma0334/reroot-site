@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="script.js" defer></script>
 </head>
 <body>
@@ -51,12 +52,12 @@
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
       <div class="hero-content-inner">
-        <p class="hero-tagline">Worn by Time. Made for Now.</p>
-        <h1 class="hero-h1">We Re-Root<br>the Craft.<br>You Keep It Alive.</h1>
-        <p class="hero-sub">India has 700+ tribal communities. Most of the world has never heard of them. We think that's a problem worth solving &mdash; starting in the highlands of Kashmir.</p>
+        <p class="hero-tagline" id="hero-tagline">Worn by Time. Made for Now.</p>
+        <h1 class="hero-h1" id="hero-title">We Re-Root<br>the Craft.<br>You Keep It Alive.</h1>
+        <p class="hero-sub" id="hero-description">India has 700+ tribal communities. Most of the world has never heard of them. We think that's a problem worth solving &mdash; starting in the highlands of Kashmir.</p>
         <div class="hero-ctas">
-          <a href="communities.html" class="btn-primary">The Kashmir Chapter</a>
-          <a href="mission.html" class="btn-ghost">Our Vision</a>
+          <a href="communities.html" class="btn-primary" id="hero-cta-primary">The Kashmir Chapter</a>
+          <a href="mission.html" class="btn-ghost" id="hero-cta-secondary">Our Vision</a>
         </div>
       </div>
     </div>
@@ -68,11 +69,11 @@
 
   <section class="section pillars-section">
     <div style="max-width:600px">
-      <p class="section-label">The LIGHT Framework</p>
-      <h2 class="section-title">Five Pillars of Cultural Revival</h2>
-      <p class="section-para">Shahida Khanam spent years documenting what her community was losing. We built LIGHT around what she taught us &mdash; that revival needs more than passion. It needs a system.</p>
+      <p class="section-label" id="pillars-label">The LIGHT Framework</p>
+      <h2 class="section-title" id="pillars-title">Five Pillars of Cultural Revival</h2>
+      <p class="section-para" id="pillars-description">Shahida Khanam spent years documenting what her community was losing. We built LIGHT around what she taught us &mdash; that revival needs more than passion. It needs a system.</p>
     </div>
-    <div class="pillars-grid">
+    <div class="pillars-grid" id="pillars-grid">
       <div class="pillar">
         <div class="pillar-letter">L</div>
         <div class="pillar-name">Literacy</div>
@@ -180,5 +181,16 @@
     </div>
   </footer>
 </main>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

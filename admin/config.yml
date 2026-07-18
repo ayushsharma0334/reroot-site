@@ -1,15 +1,15 @@
 backend:
   name: git-gateway
-  branch: main # Change to your primary branch if not main
+  branch: main
 
-local_backend: true # Enables editing locally using decaps proxy server
+local_backend: true
 
 media_folder: "img"
 public_folder: "img"
 
 collections:
   - name: "pages"
-    label: "Pages Data"
+    label: "Pages Content"
     files:
       - file: "data/team.json"
         label: "Team Members"
@@ -24,6 +24,7 @@ collections:
               - { label: "Role", name: "role", widget: "string" }
               - { label: "Profile Image", name: "image", widget: "image" }
               - { label: "Biography", name: "bio", widget: "text" }
+
       - file: "data/museum.json"
         label: "Museum Archive"
         name: "museum"
@@ -38,3 +39,123 @@ collections:
               - { label: "Featured Image", name: "image", widget: "image" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Additional Image Paths (separated by |)", name: "additional_images", widget: "string", required: false }
+
+      - file: "data/pages.json"
+        label: "Website Page Text"
+        name: "website_pages"
+        fields:
+          - label: "Home Page"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Hero Tagline", name: "hero_tagline", widget: "string" }
+              - { label: "Hero Title", name: "hero_title", widget: "text" }
+              - { label: "Hero Description", name: "hero_description", widget: "text" }
+              - { label: "Hero Primary CTA Text", name: "hero_cta_primary_text", widget: "string" }
+              - { label: "Hero Primary CTA URL", name: "hero_cta_primary_url", widget: "string" }
+              - { label: "Hero Secondary CTA Text", name: "hero_cta_secondary_text", widget: "string" }
+              - { label: "Hero Secondary CTA URL", name: "hero_cta_secondary_url", widget: "string" }
+              - { label: "LIGHT Pillars Label", name: "pillars_label", widget: "string" }
+              - { label: "LIGHT Pillars Title", name: "pillars_title", widget: "string" }
+              - { label: "LIGHT Pillars Description", name: "pillars_description", widget: "text" }
+              - label: "Pillars"
+                name: "pillars"
+                widget: "list"
+                fields:
+                  - { label: "Letter", name: "letter", widget: "string" }
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Our Mission Page"
+            name: "mission"
+            widget: "object"
+            fields:
+              - { label: "Header Label", name: "header_label", widget: "string" }
+              - { label: "Header Title", name: "header_title", widget: "text" }
+              - { label: "Feature Image", name: "feature_image", widget: "image" }
+              - { label: "Pullquote", name: "quote", widget: "string" }
+              - { label: "Paragraphs", name: "paragraphs", widget: "list", field: { widget: "text" } }
+
+          - label: "Communities Page"
+            name: "communities"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string" }
+              - { label: "Hero Title", name: "hero_title", widget: "text" }
+              - { label: "Hero Description", name: "hero_description", widget: "text" }
+              - { label: "Collaborator Image", name: "collaborator_image", widget: "image" }
+              - { label: "Collaborator Label", name: "collaborator_label", widget: "string" }
+              - { label: "Collaborator Name", name: "collaborator_name", widget: "string" }
+              - { label: "Collaborator Paragraphs", name: "collaborator_paragraphs", widget: "list", field: { widget: "text" } }
+              - { label: "Achievements Label", name: "achievements_label", widget: "string" }
+              - { label: "Achievements Title", name: "achievements_title", widget: "string" }
+              - label: "Achievements List"
+                name: "achievements"
+                widget: "list"
+                fields:
+                  - { label: "Number", name: "num", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Press Page"
+            name: "press"
+            widget: "object"
+            fields:
+              - { label: "Header Label", name: "header_label", widget: "string" }
+              - { label: "Header Title", name: "header_title", widget: "text" }
+              - label: "Articles"
+                name: "articles"
+                widget: "list"
+                fields:
+                  - { label: "Source", name: "source", widget: "string" }
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+              - { label: "Recognition Label", name: "recog_label", widget: "string" }
+              - { label: "Recognition Title", name: "recog_title", widget: "text" }
+              - { label: "Recognition Image", name: "recog_image", widget: "image" }
+              - { label: "Recognition Paragraphs", name: "recog_paragraphs", widget: "list", field: { widget: "text" } }
+
+          - label: "Donate Page"
+            name: "donate"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string" }
+              - { label: "Hero Title", name: "hero_title", widget: "string" }
+              - { label: "Hero Description", name: "hero_description", widget: "text" }
+              - { label: "CTA Button Text", name: "cta_text", widget: "string" }
+              - { label: "CTA Button URL", name: "cta_url", widget: "string" }
+              - { label: "Card Label", name: "card_label", widget: "string" }
+              - { label: "Bank Name Field Label", name: "bank_name", widget: "string" }
+              - { label: "Bank Name Value", name: "bank_name_val", widget: "string" }
+              - { label: "Account Number Field Label", name: "account_no", widget: "string" }
+              - { label: "Account Number Value", name: "account_no_val", widget: "string" }
+              - { label: "IFSC Code Field Label", name: "ifsc_code", widget: "string" }
+              - { label: "IFSC Code Value", name: "ifsc_code_val", widget: "string" }
+              - { label: "Bottom Note Label", name: "note_label", widget: "string" }
+              - { label: "Bottom Note Title", name: "note_title", widget: "string" }
+              - { label: "Bottom Note Description", name: "note_description", widget: "text" }
+
+          - label: "Store Page"
+            name: "store"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string" }
+              - { label: "Hero Title", name: "hero_title", widget: "string" }
+              - { label: "Hero Description", name: "hero_description", widget: "text" }
+              - { label: "Hero Chips", name: "chips", widget: "list", field: { widget: "string" } }
+              - { label: "Note Label", name: "note_label", widget: "string" }
+              - { label: "Note Title", name: "note_title", widget: "string" }
+              - { label: "Note Description", name: "note_description", widget: "text" }
+              - { label: "Catalog Label", name: "catalog_label", widget: "string" }
+              - { label: "Catalog Title", name: "catalog_title", widget: "string" }
+              - { label: "Catalog Description", name: "catalog_description", widget: "text" }
+              - label: "Products Catalog"
+                name: "products"
+                widget: "list"
+                fields:
+                  - { label: "Product Name", name: "name", widget: "string" }
+                  - { label: "Origin Details", name: "origin", widget: "string" }
+                  - { label: "Product Image", name: "image", widget: "image" }
+                  - { label: "Craft Badge", name: "badge", widget: "string" }
+                  - { label: "Price (number only)", name: "price", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }

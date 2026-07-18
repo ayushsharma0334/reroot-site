@@ -1,0 +1,189 @@
+{
+  "home": {
+    "hero_tagline": "Worn by Time. Made for Now.",
+    "hero_title": "We Re-Root\nthe Craft.\nYou Keep It Alive.",
+    "hero_description": "India has 700+ tribal communities. Most of the world has never heard of them. We think that's a problem worth solving — starting in the highlands of Kashmir.",
+    "hero_cta_primary_text": "The Kashmir Chapter",
+    "hero_cta_primary_url": "communities.html",
+    "hero_cta_secondary_text": "Our Vision",
+    "hero_cta_secondary_url": "mission.html",
+    "pillars_label": "The LIGHT Framework",
+    "pillars_title": "Five Pillars of Cultural Revival",
+    "pillars_description": "Shahida Khanam spent years documenting what her community was losing. We built LIGHT around what she taught us — that revival needs more than passion. It needs a system.",
+    "pillars": [
+      {
+        "letter": "L",
+        "name": "Literacy",
+        "description": "Every elder who passes takes decades of knowledge with her. We record, archive, and digitise — so the stories survive the storyteller."
+      },
+      {
+        "letter": "I",
+        "name": "Income",
+        "description": "A craft that can't pay rent dies. We build direct market access so artisans earn what their work is actually worth."
+      },
+      {
+        "letter": "G",
+        "name": "Growth",
+        "description": "One community proved it works. Now we replicate — carrying the same model to tribal arts across India, chapter by chapter."
+      },
+      {
+        "letter": "H",
+        "name": "Hope",
+        "description": "When a young woman sees her grandmother's embroidery selling in a city she's never visited — something shifts. That shift is what we're building toward."
+      },
+      {
+        "letter": "T",
+        "name": "Training",
+        "description": "The stitch doesn't die if someone learns it. We make sure someone always does."
+      }
+    ]
+  },
+  "mission": {
+    "header_label": "About Project Re-Root",
+    "header_title": "Reviving Tradition,\n*Reimagining Craft.*",
+    "feature_image": "img/feature.png",
+    "quote": "Many cultural practices exist not in written form, but in what people make, wear, and use.",
+    "paragraphs": [
+      "Project Re-Root exists for the traditions that never made it into textbooks. The ones passed from grandmother to granddaughter, hand to hand, stitch by stitch. We show up before they disappear.",
+      "We work with artisan communities to document what they know, train the next generation to carry it forward, and build real markets so the craft can sustain the people who practice it.",
+      "Our vision is simple. A world where a tribal woman in Bandipora earns a living from what her ancestors built. Where the stitch survives because someone made it worth surviving."
+    ]
+  },
+  "communities": {
+    "hero_label": "Communities — Chapter 01",
+    "hero_title": "The Kashmir Tribal\n*Art Society*",
+    "hero_description": "Our pilot partnership with Shahida Khanam — reviving the heritage of the Gujjar Bakarwal community in Bandipora, Jammu & Kashmir.",
+    "collaborator_image": "img/shahida khanum.png",
+    "collaborator_label": "The Collaborator",
+    "collaborator_name": "Shahida Khanam",
+    "collaborator_paragraphs": [
+      "Founder of the Kashmir Tribal Art Society (Reg. No.: 7882), Shahida is a cultural practitioner dedicated to preserving the tribal heritage of the Gujjar Bakarwal community.",
+      "Her journey began in 2016 after attending a Bal Rang cultural event in Madhya Pradesh, where she witnessed other tribal communities proudly maintaining their customs. Realising her own community's identity was disappearing, she began documenting oral histories from tribal elders in Bandipora — eventually establishing the Valley's first community-run museum.",
+      "National recognition followed when Shahida was invited to present her designs before President Droupadi Murmu at Chashme Shahi."
+    ],
+    "achievements_label": "What We've Built Together",
+    "achievements_title": "The Achievements",
+    "achievements": [
+      {
+        "num": "01",
+        "title": "The Training",
+        "description": "In partnership with Anita University, Re-Root designed and delivered a structured skill development programme for women artisans in Bandipora — teaching cutting, stitching, and quality control so each piece could meet modern market standards."
+      },
+      {
+        "num": "02",
+        "title": "The Product",
+        "description": "We took centuries-old Kasheeda motifs and reimagined them for the contemporary wardrobe — without erasing what makes them sacred. The result is a product line that sells not despite its heritage, but because of it."
+      },
+      {
+        "num": "03",
+        "title": "The Market",
+        "description": "Before Re-Root, the craft existed. After Re-Root, it started selling. At least one product sells every day — directly improving artisan incomes and proving the model works."
+      },
+      {
+        "num": "04",
+        "title": "The Archive",
+        "description": "Many of the Gujjar Bakarwal community's most important stories exist nowhere in writing. Re-Root is documenting oral histories, migration songs, and craft techniques from community elders — preserving in permanent digital form what has only ever lived in memory."
+      }
+    ]
+  },
+  "press": {
+    "header_label": "Media & Recognition",
+    "header_title": "Press &\n*Coverage*",
+    "articles": [
+      {
+        "source": "MAP Academy · IMP-Art.org",
+        "headline": "\"A Museum of Memories: Community-Led Preservation of Kashmir's Gojri Heritage\"",
+        "url": "https://imp-art.org/perspectives/dispatches/a-museum-of-memories-community-led-preservation-of-kashmirs-gojri-heritage/"
+      },
+      {
+        "source": "Kashmir Times",
+        "headline": "\"Gujjar Bakarwal Traditional Artefacts — Preserving a Living Culture\"",
+        "url": "https://kashmirtimes.com/culture/gujjar-bakerwal-traditional-artefacts"
+      },
+      {
+        "source": "The Siasat Daily",
+        "headline": "\"Young Tribal Girl Spearheads Heritage Preservation in Kashmir\"",
+        "url": "https://www.siasat.com/young-tribal-girl-spearheads-heritage-preservation-in-kashmir-2958664/"
+      },
+      {
+        "source": "Kashmir News Service",
+        "headline": "\"In Bandipora, A Tribal Woman Builds Museum to Save Gujjar Heritage\"",
+        "url": "https://www.knskashmir.com/in-bandipora--a-tribal-woman-builds-museum-to-save-gujjar-heritage-197463"
+      }
+    ],
+    "recog_label": "Presidential Recognition",
+    "recog_title": "Presented Before\nPresident Murmu",
+    "recog_image": "img/president.jpg",
+    "recog_paragraphs": [
+      "Shahida Khanam was invited to present KTAS designs at Chashme Shahi before President Droupadi Murmu — bringing the Gujjar Bakarwal craft tradition to the highest level of national visibility.",
+      "This recognition reflects the significance of community-led cultural preservation and the growing national conversation around tribal heritage and sustainable craft economies."
+    ]
+  },
+  "donate": {
+    "hero_label": "Support Re-Root",
+    "hero_title": "Donate",
+    "hero_description": "Direct transfers help us support artisan livelihoods and keep community craft work moving forward.",
+    "cta_text": "SUPPORT RE-ROOT",
+    "cta_url": "#bank-details",
+    "card_label": "Bank transfer details",
+    "bank_name": "Bank account holder name",
+    "bank_name_val": "NAISHA PALAWAT",
+    "account_no": "Account number",
+    "account_no_val": "539010173350",
+    "ifsc_code": "IFSC code",
+    "ifsc_code_val": "KKBK0003541",
+    "note_label": "Why it matters",
+    "note_title": "Your support goes directly into artisan-led work",
+    "note_description": "Every contribution directly funds artisan training, product development, and oral history documentation. You're not only donating to an organisation but you're keeping a tradition alive."
+  },
+  "store": {
+    "hero_label": "The Store",
+    "hero_title": "A Capsule of Living Craft",
+    "hero_description": "A small collection of pieces shaped with the same care as the stories behind them. Every product supports artisan livelihoods. For now, checkout is still being built, so each buy button opens a progress notice.",
+    "chips": [
+      "Feature under progress",
+      "Artisan-first capsule",
+      "Rooted in Kashmir"
+    ],
+    "note_label": "Shop status",
+    "note_title": "Checkout is not live yet",
+    "note_description": "Browse the collection, read the details, and tap any buy button to open a progress notice while we finish the storefront.",
+    "catalog_label": "Available Pieces",
+    "catalog_title": "Four signature forms",
+    "catalog_description": "These are the first pieces in the capsule. Buying is paused for now, but every card is ready to preview the craft, color, and silhouette of the collection.",
+    "products": [
+      {
+        "name": "Crimson Cap",
+        "origin": "Gujjar Bakarwal · Bandipora, Kashmir",
+        "image": "img/product-img/WhatsApp Image 2026-06-17 at 16.52.26.jpeg",
+        "badge": "Hand embroidery",
+        "price": "1,500",
+        "description": "Hand-embroidered topi in bold fuchsia and red, with intricate geometric needlework, fringe edging, and gold bead detailing. A wearable piece of craft heritage as striking as any accessory you'll find."
+      },
+      {
+        "name": "Wildfire Potli",
+        "origin": "Gujjar Bakarwal · Bandipora, Kashmir",
+        "image": "img/product-img/WhatsApp Image 2026-06-17 at 16.52.25.jpeg",
+        "badge": "Potli bag",
+        "price": "2,500",
+        "description": "Hand-embroidered potli bag bursting with colour, geometric patterns, multicolour tassels, and pom-pom fringe that makes a statement all on its own. The perfect finishing touch to any ethnic outfit."
+      },
+      {
+        "name": "Ember Top",
+        "origin": "Gujjar Bakarwal · Bandipora, Kashmir",
+        "image": "img/product-img/WhatsApp Image 2026-06-17 at 12.26.41.jpeg",
+        "badge": "Modal",
+        "price": "8,000",
+        "description": "Slip-style embroidered top with tie-up shoulders and a V-neckline. Lightweight and effortlessly cool. Pairs with anything from trousers to denim. Wear it out or layer it up. Fabric: modal."
+      },
+      {
+        "name": "Midnight Bloom Kurta",
+        "origin": "Gujjar Bakarwal · Bandipora, Kashmir",
+        "image": "img/product-img/WhatsApp Image 2026-06-17 at 16.52.23.jpeg",
+        "badge": "Festive wear",
+        "price": "8,000",
+        "description": "Anarkali kurta with embroidered hem and tassel detailing. Floor-length and effortlessly dramatic, made for festive evenings, cultural gatherings, or any occasion that calls for presence. Fabric: modal."
+      }
+    ]
+  }
+}
