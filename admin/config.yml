@@ -74,7 +74,7 @@ collections:
               - { label: "Header Title", name: "header_title", widget: "text" }
               - { label: "Feature Image", name: "feature_image", widget: "image" }
               - { label: "Pullquote", name: "quote", widget: "string" }
-              - { label: "Paragraphs", name: "paragraphs", widget: "list", field: { widget: "text" } }
+              - { label: "Paragraphs", name: "paragraphs", widget: "list", field: { label: "Paragraph Text", name: "paragraph", widget: "text" } }
 
           - label: "Communities Page"
             name: "communities"
@@ -86,7 +86,7 @@ collections:
               - { label: "Collaborator Image", name: "collaborator_image", widget: "image" }
               - { label: "Collaborator Label", name: "collaborator_label", widget: "string" }
               - { label: "Collaborator Name", name: "collaborator_name", widget: "string" }
-              - { label: "Collaborator Paragraphs", name: "collaborator_paragraphs", widget: "list", field: { widget: "text" } }
+              - { label: "Collaborator Paragraphs", name: "collaborator_paragraphs", widget: "list", field: { label: "Paragraph Text", name: "paragraph", widget: "text" } }
               - { label: "Achievements Label", name: "achievements_label", widget: "string" }
               - { label: "Achievements Title", name: "achievements_title", widget: "string" }
               - label: "Achievements List"
@@ -113,7 +113,7 @@ collections:
               - { label: "Recognition Label", name: "recog_label", widget: "string" }
               - { label: "Recognition Title", name: "recog_title", widget: "text" }
               - { label: "Recognition Image", name: "recog_image", widget: "image" }
-              - { label: "Recognition Paragraphs", name: "recog_paragraphs", widget: "list", field: { widget: "text" } }
+              - { label: "Recognition Paragraphs", name: "recog_paragraphs", widget: "list", field: { label: "Paragraph Text", name: "paragraph", widget: "text" } }
 
           - label: "Donate Page"
             name: "donate"
@@ -142,7 +142,7 @@ collections:
               - { label: "Hero Label", name: "hero_label", widget: "string" }
               - { label: "Hero Title", name: "hero_title", widget: "string" }
               - { label: "Hero Description", name: "hero_description", widget: "text" }
-              - { label: "Hero Chips", name: "chips", widget: "list", field: { widget: "string" } }
+              - { label: "Hero Chips", name: "chips", widget: "list", field: { label: "Chip Text", name: "chip", widget: "string" } }
               - { label: "Note Label", name: "note_label", widget: "string" }
               - { label: "Note Title", name: "note_title", widget: "string" }
               - { label: "Note Description", name: "note_description", widget: "text" }
