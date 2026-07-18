@@ -281,10 +281,110 @@ function initMuseumArchivePage() {
   });
 }
 
+function loadTeamData() {
+  var grid = document.getElementById("team-grid");
+  if (!grid) return;
+
+  fetch("data/team.json")
+    .then(function (response) { return response.json(); })
+    .then(function (data) {
+      var members = data.members || [];
+      grid.innerHTML = "";
+      members.forEach(function (member) {
+        var card = document.createElement("div");
+        card.className = "team-card";
+        
+        var frame = document.createElement("div");
+        frame.className = "founder-photo-frame";
+        
+        var img = document.createElement("img");
+        img.src = member.image;
+        img.alt = member.name;
+        frame.appendChild(img);
+        
+        var h3 = document.createElement("h3");
+        h3.className = "team-name";
+        h3.textContent = member.name;
+        
+        var pRole = document.createElement("p");
+        pRole.className = "team-role";
+        pRole.textContent = member.role;
+        
+        var pBio = document.createElement("p");
+        pBio.className = "team-bio";
+        pBio.textContent = member.bio;
+        
+        card.appendChild(frame);
+        card.appendChild(h3);
+        card.appendChild(pRole);
+        card.appendChild(pBio);
+        grid.appendChild(card);
+      });
+    })
+    .catch(function (err) {
+      console.error("Error loading team data:", err);
+    });
+}
+
+function loadMuseumData() {
+  var grid = document.getElementById("archive-grid");
+  if (!grid) return;
+
+  fetch("data/museum.json")
+    .then(function (response) { return response.json(); })
+    .then(function (data) {
+      var items = data.items || [];
+      grid.innerHTML = "";
+      items.forEach(function (item) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = "archive-tile";
+        button.dataset.archiveSrc = item.image;
+        button.dataset.archiveAlt = item.title + " (" + item.category + ")";
+        button.dataset.archiveTitle = item.title;
+        button.dataset.archiveDescription = item.description;
+        if (item.additional_images) {
+          button.dataset.archiveImages = item.additional_images;
+        }
+
+        var frame = document.createElement("span");
+        frame.className = "archive-frame";
+        
+        var img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.title + " (" + item.category + ")";
+        img.loading = "lazy";
+        frame.appendChild(img);
+        
+        var meta = document.createElement("span");
+        meta.className = "archive-meta";
+        
+        var h3 = document.createElement("h3");
+        h3.textContent = item.title;
+        
+        var p = document.createElement("p");
+        p.textContent = item.category;
+        
+        meta.appendChild(h3);
+        meta.appendChild(p);
+        
+        button.appendChild(frame);
+        button.appendChild(meta);
+        
+        grid.appendChild(button);
+      });
+      initMuseumArchivePage();
+    })
+    .catch(function (err) {
+      console.error("Error loading museum data:", err);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   applyRandomBackgrounds();
   openProjectFromHash();
-  initMuseumArchivePage();
+  loadTeamData();
+  loadMuseumData();
 });
 
 window.addEventListener("keydown", function (event) {

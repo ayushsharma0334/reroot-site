@@ -1,0 +1,16 @@
+{
+  "members": [
+    {
+      "name": "Naisha Palawat",
+      "role": "Founder",
+      "image": "img/naisha.jpeg",
+      "bio": "Naisha didn't set out to start a movement. She set out to understand something that bothered her — why the artisans she watched as a child, working with extraordinary skill and craft that took lifetimes to learn, were invisible to the world that would have valued them most. That question led her to a statistic that changed everything. India has over 700 tribal communities. Almost none have reliable market access. Many are disappearing in real time. At fifteen, she co-founded Project Re-Root — not as a charity, but as a model. A system that could be built once and replicated everywhere. What started as a question became a partnership, a training programme, a product line, and a platform. One community at a time."
+    },
+    {
+      "name": "Yashkit Jain",
+      "role": "Co-Founder",
+      "image": "img/Yashkit.png",
+      "bio": "Yashkit built the operational framework that turned a documentation project into a scalable model for cultural and economic revival. His focus on market access and artisan partnerships forms the backbone of Re-Root's LIGHT methodology."
+    }
+  ]
+}
